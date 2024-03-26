@@ -106,7 +106,8 @@ class ClientController extends Controller
             'gas_consumption' => implode('||||',$request->gas_consumption),
             'address' => implode('||||',$request->address),
             'image' => $path,
-            'created_by'=>$userId
+            'created_by'=>$userId,
+            'no_phone_call_date'=>Date('Y-m-d H:i:s')
         ]);
 
         for ($i=0; $i < count($request->user) ; $i++) { 
@@ -218,14 +219,19 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
+        if($client->image != 'theme/assets/media/svg/avatars/blank.svg')
+            {
         FileObj::delete($client->image);
+            }
         FileObj::delete($client->document_path);
 
         ClientUser::where('client_id',$client->id)->delete();
         ClientNote::where('client_id',$client->id)->delete();
         $clientFiles=ClientFile::where('client_id',$client->id)->get();
         foreach ($clientFiles as $file) {
-            FileObj::delete($file->path);
+            
+                FileObj::delete($file->path);
+            
         }
         ClientFile::where('client_id', $client->id)->delete();
 

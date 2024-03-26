@@ -160,7 +160,10 @@ class ProviderController extends Controller
             }
             $item->delete();
         }
+        if($provider->image != 'theme/assets/media/svg/avatars/blank.svg')
+            {
         FileObj::delete($provider->image);
+            }
         $provider->delete();
         return true;
     }
