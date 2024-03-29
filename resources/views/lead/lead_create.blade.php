@@ -20,7 +20,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">Status</label>
-                <select name="status" class="form-select form-select-solid js-example-basic-single" data-control="select2" data-close-on-select="true" data-placeholder="Select Status" data-allow-clear="true" required>
+                <select name="status" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="Select Status" data-allow-clear="true" required>
                     <option></option>
                     <option value="lead">Lead</option>
                     <option value="client">Client</option>
@@ -28,7 +28,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">District</label>
-                <select name="district" class="form-select form-select-solid js-example-basic-single" data-control="select2" data-close-on-select="true" data-placeholder="Select District" data-allow-clear="true" required>
+                <select name="district" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="Select District" data-allow-clear="true" required>
                     <option></option>
                     <option value="Aveiro">Aveiro</option>
                     <option value="Beja">Beja</option>
@@ -55,7 +55,7 @@
             @if(Auth::user()->hasRole('admin'))
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">User</label>
-                <select name="user" class="form-select form-select-solid js-example-basic-single" data-control="select2" data-close-on-select="true" data-placeholder="Select User" data-allow-clear="true" required>
+                <select name="user" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="Select User" data-allow-clear="true" required>
                     <option></option>
                     @foreach ($user as $item)
                         <option value="{{ $item->id }}">{{ $item->name }}</option>

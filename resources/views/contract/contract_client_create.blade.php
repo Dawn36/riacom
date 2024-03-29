@@ -16,8 +16,8 @@
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">Duration</label>
                 <input type="number" class="required form-control form-control-solid"
-                    placeholder="Enter the number of months" value="0" onkeyup="checkEndDate()" id="duration" name="duration"
-                    required />
+                    placeholder="Enter the number of months" value="0" onkeyup="checkEndDate()" id="duration"
+                    name="duration" required />
             </div>
             <div class="col-12 col-md-6">
                 <label class="fs-6 fw-bold mb-2">End Date</label>
@@ -46,8 +46,10 @@
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">Provider</label>
                 <select name="provider" id="provider" class="form-select form-select-solid js-example-basic-single"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Provider"
-                    {{ Auth::user()->hasRole('admin') == true ? 'onchange=providerUser()' : ''  }}   data-allow-clear="true" required>
+                    data-dropdown-parent="#modal_large" data-dropdown-parent="#modal_large" data-control="select2"
+                    data-close-on-select="true" data-placeholder="Select Provider"
+                    {{ Auth::user()->hasRole('admin') == true ? 'onchange=providerUser()' : '' }}
+                    data-allow-clear="true" required>
                     <option></option>
                     @foreach ($provider as $item)
                         <option value="{{ $item->id }}" data-type="{{ $item->type_of_service }}">{{ $item->name }}
@@ -58,8 +60,8 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Tension</label>
                 <select name="tension" class="form-select form-select-solid js-example-basic-single"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Tension"
-                    data-allow-clear="true">
+                    data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true"
+                    data-placeholder="Select Tension" data-allow-clear="true">
                     <option></option>
                     <option value="BTN">BTN</option>
                     <option value="BTE">BTE</option>
@@ -71,8 +73,8 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Power</label>
                 <select name="power" class="form-select form-select-solid js-example-basic-single"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Power"
-                    data-allow-clear="true">
+                    data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true"
+                    data-placeholder="Select Power" data-allow-clear="true">
                     <option></option>
                     <option value="1,15">1,15</option>
                     <option value="2,30">2,30</option>
@@ -92,8 +94,8 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Cicle</label>
                 <select name="cicle" class="form-select form-select-solid js-example-basic-single"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Cicle"
-                    data-allow-clear="true">
+                    data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true"
+                    data-placeholder="Select Cicle" data-allow-clear="true">
                     <option></option>
                     <option value="No cicle">No cicle</option>
                     <option value="Daily">Daily</option>
@@ -104,8 +106,8 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Tariff</label>
                 <select name="tariff" class="form-select form-select-solid js-example-basic-single"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Tariff"
-                    data-allow-clear="true">
+                    data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true"
+                    data-placeholder="Select Tariff" data-allow-clear="true">
                     <option></option>
                     <option value="Simple">Simple</option>
                     <option value="Bi-hourly">Bi-hourly</option>
@@ -116,8 +118,8 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Reception phase</label>
                 <select name="reception_phase" class="form-select form-select-solid js-example-basic-single"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Reception phase"
-                    data-allow-clear="true">
+                    data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true"
+                    data-placeholder="Select Reception phase" data-allow-clear="true">
                     <option></option>
                     <option value="Monofasic">Monofasic</option>
                     <option value="Trifasic">Trifasic</option>
@@ -126,8 +128,8 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Gas pressure</label>
                 <select name="gas_pressure" class="form-select form-select-solid js-example-basic-single"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Gas pressure"
-                    data-allow-clear="true">
+                    data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true"
+                    data-placeholder="Select Gas pressure" data-allow-clear="true">
                     <option></option>
                     <option value="Low pressure">Low pressure</option>
                     <option value="Mid pressure">Mid pressure</option>
@@ -137,8 +139,8 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Gas Scalation</label>
                 <select name="gas_scalation" class="form-select form-select-solid js-example-basic-single"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Gas Scalation"
-                    data-allow-clear="true">
+                    data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true"
+                    data-placeholder="Select Gas Scalation" data-allow-clear="true">
                     <option></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -150,8 +152,8 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Gas Tariff</label>
                 <select name="gas_tariff" class="form-select form-select-solid js-example-basic-single"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Gas Tariff"
-                    data-allow-clear="true">
+                    data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true"
+                    data-placeholder="Select Gas Tariff" data-allow-clear="true">
                     <option></option>
                     <option value="Short use">Short use</option>
                     <option value="Long use">Long use</option>
@@ -161,8 +163,8 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Energy Market</label>
                 <select name="energy_market" class="form-select form-select-solid js-example-basic-single"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Energy Market"
-                    data-allow-clear="true">
+                    data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true"
+                    data-placeholder="Select Energy Market" data-allow-clear="true">
                     <option></option>
                     <option value="Indexed Market">Indexed Market</option>
                     <option value="Fixed Market">Fixed Market</option>
@@ -172,8 +174,8 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Gas Market</label>
                 <select name="gas_market" class="form-select form-select-solid js-example-basic-single"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Gas Market"
-                    data-allow-clear="true">
+                    data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true"
+                    data-placeholder="Select Gas Market" data-allow-clear="true">
                     <option></option>
                     <option value="Indexed Market">Indexed Market</option>
                     <option value="Fixed Market">Fixed Market</option>
@@ -184,8 +186,8 @@
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">Status</label>
                 <select name="status" class="form-select form-select-solid js-example-basic-single"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Status"
-                    data-allow-clear="true" required>
+                    data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true"
+                    data-placeholder="Select Status" data-allow-clear="true" required>
                     <option></option>
                     <option value="Active">Active</option>
                     <option value="Closed">Closed</option>
@@ -196,18 +198,19 @@
                 <input type="file" class="form-control form-control-solid" name="contract"
                     accept-language="pt" />
             </div>
-            @if(Auth::user()->hasRole('admin'))
-            <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">User</label>
-                <select name="user" id="user" class="form-select form-select-solid js-example-basic-single"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select User"
-                    data-allow-clear="true" required>
-                    <option></option>
+            @if (Auth::user()->hasRole('admin'))
+                <div class="col-12 col-md-6">
+                    <label class="required fs-6 fw-bold mb-2">User</label>
+                    <select name="user" id="user"
+                        class="form-select form-select-solid js-example-basic-single"
+                        data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true"
+                        data-placeholder="Select User" data-allow-clear="true" required>
+                        <option></option>
 
-                </select>
-            </div>
+                    </select>
+                </div>
             @else
-                <input hidden name="user" value="{{Auth::user()->id}}"/>
+                <input hidden name="user" value="{{ Auth::user()->id }}" />
             @endif
         </div>
     </div>
@@ -285,7 +288,5 @@
             checkEndDate();
         }
     });
-
-
-    $('.js-example-basic-single').select2();
+        $('.js-example-basic-single').select2();
 </script>

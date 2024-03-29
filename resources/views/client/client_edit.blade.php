@@ -62,7 +62,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">Status</label>
-                <select name="status" class="form-select form-select-solid js-example-basic-single" data-control="select2"
+                <select name="status" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2"
                     data-close-on-select="true" data-placeholder="Select Status" data-allow-clear="true">
                     <option></option>
                     <option value="to be contacted" {{ $client->status == 'to be contacted' ? 'selected' : '' }}>To be
@@ -80,7 +80,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">User</label>
-                <select name="user[]" class="form-select form-select-solid js-example-basic-single"
+                <select name="user[]" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="Select User"
                     data-allow-clear="true" multiple>
                     <option></option>

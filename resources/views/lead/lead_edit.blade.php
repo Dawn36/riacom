@@ -21,7 +21,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">Status</label>
-                <select name="status" class="form-select form-select-solid js-example-basic-single" data-control="select2" data-close-on-select="true" data-placeholder="Select Status" data-allow-clear="true" required>
+                <select name="status" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="Select Status" data-allow-clear="true" required>
                     <option></option>
                     <option value="lead" {{ $lead->status == 'lead' ? 'selected' : '' }}>Lead</option>
                     <option value="client" {{ $lead->status == 'client' ? 'selected' : '' }}>Client</option>
@@ -29,7 +29,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">District</label>
-                <select name="district" class="form-select form-select-solid js-example-basic-single" data-control="select2" data-close-on-select="true" data-placeholder="Select District" data-allow-clear="true" required>
+                <select name="district" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="Select District" data-allow-clear="true" required>
                     <option></option>
                     <option value="Aveiro" {{ $lead->district == 'Aveiro' ? 'Selected' : '' }}>Aveiro</option>
                     <option value="Beja" {{ $lead->district == 'Beja' ? 'Selected' : '' }}>Beja</option>
@@ -56,7 +56,7 @@
             @if(Auth::user()->hasRole('admin'))
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">User</label>
-                <select name="user" class="form-select form-select-solid js-example-basic-single" data-control="select2" data-close-on-select="true" data-placeholder="Select User" data-allow-clear="true" required>
+                <select name="user" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="Select User" data-allow-clear="true" required>
                     <option></option>
                     @foreach ($user as $item)
                         <option value="{{ $item->id }}" {{ $lead->user_id == $item->id ? 'Selected' : '' }}>{{ $item->name }}</option>

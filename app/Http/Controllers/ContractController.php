@@ -122,6 +122,7 @@ class ContractController extends Controller
             'contract_path'=>$path,
             'client_id'=>$request->client_id,
             'created_by'=> $userId,
+            'client_address'=> isset($request->client_address) ? $request->client_address : ''
         ]);
 
         if($request->has('vat_number'))
@@ -226,6 +227,7 @@ class ContractController extends Controller
         $contract->energy_market = $request->energy_market;
         $contract->gas_market = $request->gas_market;
         $contract->status = $request->status;
+        $contract->client_address= isset($request->client_address) ? $request->client_address : '';
         $contract->save();
 
         return response()->json([
@@ -258,6 +260,11 @@ class ContractController extends Controller
     public function checkVatNumberClient(Request $request)
     {
         $vatNumber=$request->vat_number;
-        return Client::where('vat_number',$vatNumber)->first();
+        $data= Client::where('vat_number',$vatNumber)->first();
+        if($data !=  null)
+        {
+            $data->address=explode('||||',@$data->address);
+        }
+        return $data;
     }
 }

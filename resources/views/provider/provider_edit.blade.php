@@ -54,7 +54,7 @@
         </div>
         <div class="fv-row mb-5">
             <label class="fs-6 fw-semibold mb-2">Users</label>
-            <select name="users[]" class="form-select form-select-solid js-example-basic-single" data-control="select2"
+            <select name="users[]" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2"
                 data-close-on-select="true" data-placeholder="Assign Users" data-allow-clear="true" multiple>
                 <option></option>
                 @foreach ($user as $item)

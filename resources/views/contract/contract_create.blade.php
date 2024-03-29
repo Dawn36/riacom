@@ -6,7 +6,21 @@
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">VAT number</label>
                 <input type="text" class="form-control form-control-solid" onkeyup="checkVatNumber()" placeholder="Search by VAT number" id="vat_number" name="vat_number" required />
-                <div class="myClass" id="vat_number_check" style="color: red; display: none">The VAT number not found.</div>
+                <div class="myClass text-danger" id="vat_number_check" style="display: none">The VAT number not found.</div>
+                <div class="myClass text-success" id="vat_number_check_found" style="display: none">The VAT number found.</div>
+            </div>
+            <div class="col-12 col-md-6">
+                <label class="required fs-6 fw-bold mb-2">Client Name</label>
+                <input type="text" id="client_name" class="form-control form-control-solid" placeholder="Enter Client Name"
+                    disabled/>
+            </div>
+            <div class="col-12 col-md-6">
+                <label class="required fs-6 fw-bold mb-2">Client Address</label>
+                <select name="client_address" id="client_address" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
+                    data-control="select2" data-close-on-select="true" data-placeholder="Select Client Address"
+                      data-allow-clear="true" required>
+                    <option></option>
+                </select>
             </div>
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">Contract Name</label>
@@ -50,7 +64,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">Provider</label>
-                <select name="provider" id="provider" class="form-select form-select-solid js-example-basic-single"
+                <select name="provider" id="provider" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="Select Provider"
                     {{ Auth::user()->hasRole('admin') == true ? 'onchange=providerUser()' : ''  }}   data-allow-clear="true" required>
                     <option></option>
@@ -62,7 +76,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Tension</label>
-                <select name="tension" class="form-select form-select-solid js-example-basic-single"
+                <select name="tension" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="Select Tension"
                     data-allow-clear="true">
                     <option></option>
@@ -75,7 +89,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Power</label>
-                <select name="power" class="form-select form-select-solid js-example-basic-single"
+                <select name="power" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="Select Power"
                     data-allow-clear="true">
                     <option></option>
@@ -96,7 +110,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Cicle</label>
-                <select name="cicle" class="form-select form-select-solid js-example-basic-single"
+                <select name="cicle" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="Select Cicle"
                     data-allow-clear="true">
                     <option></option>
@@ -108,7 +122,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Tariff</label>
-                <select name="tariff" class="form-select form-select-solid js-example-basic-single"
+                <select name="tariff" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="Select Tariff"
                     data-allow-clear="true">
                     <option></option>
@@ -120,7 +134,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Reception phase</label>
-                <select name="reception_phase" class="form-select form-select-solid js-example-basic-single"
+                <select name="reception_phase" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="Select Reception phase"
                     data-allow-clear="true">
                     <option></option>
@@ -130,7 +144,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Gas pressure</label>
-                <select name="gas_pressure" class="form-select form-select-solid js-example-basic-single"
+                <select name="gas_pressure" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="Select Gas pressure"
                     data-allow-clear="true">
                     <option></option>
@@ -141,7 +155,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Gas Scalation</label>
-                <select name="gas_scalation" class="form-select form-select-solid js-example-basic-single"
+                <select name="gas_scalation" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="Select Gas Scalation"
                     data-allow-clear="true">
                     <option></option>
@@ -154,7 +168,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Gas Tariff</label>
-                <select name="gas_tariff" class="form-select form-select-solid js-example-basic-single"
+                <select name="gas_tariff" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="Select Gas Tariff"
                     data-allow-clear="true">
                     <option></option>
@@ -165,7 +179,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Energy Market</label>
-                <select name="energy_market" class="form-select form-select-solid js-example-basic-single"
+                <select name="energy_market" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="Select Energy Market"
                     data-allow-clear="true">
                     <option></option>
@@ -176,7 +190,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Gas Market</label>
-                <select name="gas_market" class="form-select form-select-solid js-example-basic-single"
+                <select name="gas_market" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="Select Gas Market"
                     data-allow-clear="true">
                     <option></option>
@@ -188,7 +202,7 @@
 
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">Status</label>
-                <select name="status" class="form-select form-select-solid js-example-basic-single"
+                <select name="status" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="Select Status"
                     data-allow-clear="true" required>
                     <option></option>
@@ -204,7 +218,7 @@
             @if(Auth::user()->hasRole('admin'))
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">User</label>
-                <select name="user" id="user" class="form-select form-select-solid js-example-basic-single"
+                <select name="user" id="user" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="Select User"
                     data-allow-clear="true" required>
                     <option></option>
@@ -271,11 +285,27 @@
                 if(result == '')
                 {
                     $('#vat_number_check').show();
+                    $('#vat_number_check_found').hide();
+                    $('#client_id').val('');
+                    $('#client_name').val('');
+                    document.getElementById('client_address').innerHTML = '<option></option>';
                 }
                 else
                 {
+                    $('#vat_number_check_found').show();
                     $('#vat_number_check').hide();
                     $('#client_id').val(result.id);
+                    $('#client_name').val(result.name);
+                    document.getElementById('client_address').innerHTML = '<option></option>';
+                    for (var i = 0; i < result.address.length; i++) {
+                        var option = document.createElement('option');
+                        option.value = result.address[i];
+                        option.innerHTML = result.address[i];
+                        // if (result[i].id == "{{ isset($branch->area_id) ? $branch->area_id : '' }}") option
+                        //     .defaultSelected =
+                        //     true;
+                        document.getElementById('client_address').appendChild(option);
+                    }
                 }
             }
         });
@@ -314,6 +344,7 @@
             checkEndDate();
         }
     });
+    KTScroll.createInstances()
 
 
     $('.js-example-basic-single').select2();

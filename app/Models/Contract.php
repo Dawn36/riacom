@@ -36,6 +36,7 @@ class Contract extends Model
         'user_id',
         'created_by',
         'client_id',
+        'client_address',
     ];
     
     protected function createdAt(): Attribute

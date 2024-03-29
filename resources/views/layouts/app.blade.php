@@ -75,7 +75,7 @@ $path = $_SERVER['REQUEST_URI'];
                     <div class="app-navbar flex-lg-grow-1" id="kt_app_header_navbar">
                         <div class="app-navbar-item d-flex align-items-stretch flex-lg-grow-1">
                             <!--begin::Search-->
-                            <div id="kt_header_search" class="header-search d-flex align-items-center w-lg-200px">
+                            {{-- <div id="kt_header_search" class="header-search d-flex align-items-center w-lg-200px">
                                 <div class="d-none d-lg-block w-100 position-relative mb-5 mb-lg-0" autocomplete="off">
                                     <i
                                         class="ki-outline ki-magnifier search-icon fs-2 text-gray-500 position-absolute top-50 translate-middle-y ms-5"></i>
@@ -83,7 +83,7 @@ $path = $_SERVER['REQUEST_URI'];
                                         name="search" value="" placeholder="Search..."
                                         data-kt-search-element="input" />
                                 </div>
-                            </div>
+                            </div> --}}
                             <!--end::Search-->
                         </div>
                         <div class="app-navbar-item ms-1 ms-md-4">

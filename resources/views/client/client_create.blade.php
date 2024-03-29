@@ -50,7 +50,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">Status</label>
-                <select name="status" class="form-select form-select-solid js-example-basic-single" data-control="select2" data-close-on-select="true" data-placeholder="Select Status" data-allow-clear="true" >
+                <select name="status" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="Select Status" data-allow-clear="true" >
                     <option></option>
                     <option value="to be contacted">To be Contacted</option>
                     <option value="contact">Contact</option>
@@ -65,7 +65,7 @@
             @if (Auth::user()->hasRole('admin'))
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">User</label>
-                <select name="user[]" class="form-select form-select-solid js-example-basic-single" data-control="select2" data-close-on-select="true" data-placeholder="Select User" data-allow-clear="true" multiple >
+                <select name="user[]" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="Select User" data-allow-clear="true" multiple >
                     <option></option>
                     @foreach ($user as $item)
                         <option value="{{ $item->id }}">{{ $item->name }}</option>

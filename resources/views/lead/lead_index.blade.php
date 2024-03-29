@@ -46,6 +46,7 @@
                                 <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0 nowrap">
                                     <th>Name & Email</th>
                                     <th>Type of Service</th>
+                                    <th>District</th>
                                     <th class="min-w-300px">Message</th>
                                     <th>Status</th>
                                     <th>Creation date</th>
@@ -62,6 +63,9 @@
                                     </td>
                                     <td>
                                         {{ $item->type_of_service }}
+                                    </td>
+                                    <td>
+                                        {{ $item->district }}
                                     </td>
                                     <td>
                                         {{ $item->message }}
