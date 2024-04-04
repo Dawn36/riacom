@@ -75,7 +75,7 @@
                     <i class="ki-outline ki-information-5 ms-1 fs-6" data-bs-toggle="tooltip"
                         title="Select the Provider to see the Type of Service"></i>
                 </label>
-                <input readonly type="text" class="form-control form-control-solid" id="type_of_service"
+                <input readonly type="text" class="form-control form-control-solid kt_tagify_1" id="type_of_service"
                     name="type_of_service" />
             </div>
             
@@ -351,6 +351,7 @@
     });
     KTScroll.createInstances()
 
-
+    var input1 = document.querySelector(".kt_tagify_1");
+    new Tagify(input1, {});
     $('.js-example-basic-single').select2();
 </script>
