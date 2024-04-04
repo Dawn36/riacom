@@ -54,12 +54,19 @@ class ProviderController extends Controller
             $file->move($destinationPath, $filename);
             $path = "uploads/provider/" . $userId . "/" . $filename;
         }
-
+        $typeOfService=json_decode($request->type_of_service);
+        $tag=array();
+        if($typeOfService != null)
+        {
+            for ($i=0; $i < count($typeOfService) ; $i++) { 
+                array_push($tag,$typeOfService[$i]->value);
+            }
+        }
         $provider=Provider::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'type_of_service' => $request->type_of_service,
+            'type_of_service' => implode(',',$tag),
             'image' => $path,
             'created_by'=>$userId
         ]);
@@ -122,12 +129,19 @@ class ProviderController extends Controller
             $path = "uploads/provider/" . $userId . "/" . $filename;
             $provider->image=$path;
         }
-
+        $typeOfService=json_decode($request->type_of_service);
+        $tag=array();
+        if($typeOfService != null)
+        {
+            for ($i=0; $i < count($typeOfService) ; $i++) { 
+                array_push($tag,$typeOfService[$i]->value);
+            }
+        }
         
         $provider->name = $request->name;
         $provider->email = $request->email;
         $provider->phone = $request->phone;
-        $provider->type_of_service = $request->type_of_service;
+        $provider->type_of_service = implode(',',$tag);
         $provider->save();
         
         ProviderUser::where('provider_id',$provider->id)->delete();

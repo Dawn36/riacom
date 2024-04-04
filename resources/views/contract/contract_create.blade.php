@@ -51,15 +51,7 @@
                 <input type="number" class="form-control form-control-solid"
                     placeholder="Enter Renews in… (no. of months)" name="renews_in" />
             </div>
-            <div class="col-12 col-md-6">
-                <label class="fs-6 fw-bold mb-2">
-                    <span class="required">Type of Service</span>
-                    <i class="ki-outline ki-information-5 ms-1 fs-6" data-bs-toggle="tooltip"
-                        title="Select the Provider to see the Type of Service"></i>
-                </label>
-                <input readonly type="text" class="form-control form-control-solid" id="type_of_service"
-                    name="type_of_service" />
-            </div>
+            
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">Monthly Fee in EUR €</label>
                 <input type="tel" class="form-control form-control-solid" placeholder="Enter Monthly Fee in EUR €"
@@ -77,6 +69,16 @@
                     @endforeach
                 </select>
             </div>
+            <div class="col-12 col-md-6">
+                <label class="fs-6 fw-bold mb-2">
+                    <span class="required">Type of Service</span>
+                    <i class="ki-outline ki-information-5 ms-1 fs-6" data-bs-toggle="tooltip"
+                        title="Select the Provider to see the Type of Service"></i>
+                </label>
+                <input readonly type="text" class="form-control form-control-solid" id="type_of_service"
+                    name="type_of_service" />
+            </div>
+            
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">Tension</label>
                 <select name="tension" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
