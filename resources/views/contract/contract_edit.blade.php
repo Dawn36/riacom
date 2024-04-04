@@ -34,11 +34,6 @@
                     name="renews_in" />
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">Monthly Fee in EUR €</label>
-                <input type="tel" class="form-control form-control-solid" placeholder="Enter Monthly Fee in EUR €"
-                    name="monthly_fee" value="{{ $contract->monthly_fee }}" required />
-            </div>
-            <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">Provider</label>
                 <select name="provider" id="provider" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="Select Provider"
@@ -51,6 +46,12 @@
                     @endforeach
                 </select>
             </div>
+            <div class="col-12 col-md-6">
+                <label class="required fs-6 fw-bold mb-2">Monthly Fee in EUR €</label>
+                <input type="tel" class="form-control form-control-solid" placeholder="Enter Monthly Fee in EUR €"
+                    name="monthly_fee" value="{{ $contract->monthly_fee }}" required />
+            </div>
+            
             <div class="col-12 col-md-6">
                 <label class="fs-6 fw-bold mb-2">
                     <span class="required">Type of Service</span>
