@@ -1,6 +1,9 @@
 <form id="add_form" class="form" method="POST" action="{{ route('client.store') }}">
     @csrf
-    <div class="py-10 px-7 px-lg-10">
+    <div class="scroll-y py-10 px-7 px-lg-10" id="modal_large" data-kt-scroll="true"
+        data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
+        data-kt-scroll-dependencies="#modal_large_header" data-kt-scroll-wrappers="#modal_large"
+        data-kt-scroll-offset="200px">
         <label class="fs-6 fw-bold mb-4">Picture</label>
         <div class="fv-row mb-5">
             <div class="image-input image-input-outline image-input-empty" data-kt-image-input="true" style="background-image: url({{ asset('theme/assets/media/svg/avatars/blank.svg')}})">
@@ -156,6 +159,7 @@
 });
 
     KTImageInput.createInstances();
+    KTScroll.createInstances()
 
     $('.js-example-basic-single').select2();
 </script>

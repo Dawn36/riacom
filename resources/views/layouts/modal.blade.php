@@ -12,7 +12,7 @@
                     </span>
                 </div>
             </div>
-            <div class="modal-body scroll-y p-0" id="modal_large_body">
+            <div class="modal-body p-0" id="modal_large_body">
                
             </div>
         </div>

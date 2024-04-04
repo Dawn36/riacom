@@ -1,6 +1,9 @@
 <form id="add_form" class="form" method="POST" action="{{ route('lead.store') }}">
     @csrf
-    <div class="py-10 px-7 px-lg-10">
+    <div class="scroll-y py-10 px-7 px-lg-10" id="modal_large" data-kt-scroll="true"
+        data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
+        data-kt-scroll-dependencies="#modal_large_header" data-kt-scroll-wrappers="#modal_large"
+        data-kt-scroll-offset="200px">
         <div class="row g-5">
             <div class="col-12 col-md-6">
                 <label class="fs-6 fw-semibold mb-2">Name</label>
@@ -77,5 +80,7 @@
     </div>
 </form>
 <script>
+    KTScroll.createInstances()
+
     $('.js-example-basic-single').select2();
 </script>

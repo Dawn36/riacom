@@ -1,7 +1,10 @@
 <form id="add_form" class="form" method="POST" action="{{ route('contract.store') }}">
     @csrf
-    <input hidden name="client_id" value="{{ $clientId }}" />
-    <div class="py-10 px-7 px-lg-10">
+    <div class="scroll-y py-10 px-7 px-lg-10" id="modal_large" data-kt-scroll="true"
+        data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
+        data-kt-scroll-dependencies="#modal_large_header" data-kt-scroll-wrappers="#modal_large"
+        data-kt-scroll-offset="200px">
+        <input hidden name="client_id" value="{{ $clientId }}" />
         <div class="row g-5">
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">Contract Name</label>
@@ -288,5 +291,7 @@
             checkEndDate();
         }
     });
+    KTScroll.createInstances()
+
         $('.js-example-basic-single').select2();
 </script>
