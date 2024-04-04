@@ -75,8 +75,11 @@
                     <i class="ki-outline ki-information-5 ms-1 fs-6" data-bs-toggle="tooltip"
                         title="Select the Provider to see the Type of Service"></i>
                 </label>
-                <input readonly type="text" class="form-control form-control-solid kt_tagify_1" id="type_of_service"
-                    name="type_of_service" />
+                <select id="type_of_service" name="type_of_service" class="form-select form-select-solid js-example-basic-single"
+                    data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true"
+                    data-placeholder="Select Type of Service" data-allow-clear="true">
+                    <option></option>
+                </select>
             </div>
             
             <div class="col-12 col-md-6 col-lg-4">
@@ -249,8 +252,18 @@
     $(document).ready(function() {
         $('select[name="provider"]').on('change', function() {
             var selectedType = $(this).find(':selected').data('type');
-            // console.log(selectedType); // Output the selected type to console
-            $('#type_of_service').val(selectedType);
+            var typeArray = selectedType.split(',');
+            
+            document.getElementById('type_of_service').innerHTML = '<option></option>';
+            for (var i = 0; i < typeArray.length; i++) {
+                var option = document.createElement('option');
+                option.value = typeArray[i];
+                option.innerHTML = typeArray[i];
+                // if (result[i].id == "{{ isset($branch->area_id) ? $branch->area_id : '' }}") option
+                //     .defaultSelected =
+                //     true;
+                document.getElementById('type_of_service').appendChild(option);
+            }
         });
     });
 
