@@ -22,15 +22,43 @@ class ContractController extends Controller
     {
         $contract=Contract::UserWise()->Join('clients AS c', 'contracts.client_id', '=', 'c.id')->
         Join('providers AS p', 'contracts.provider_id', '=', 'p.id')->
+        Join('users AS u', 'contracts.user_id', '=', 'u.id')->
         when($request->status, function ($query, $data) {
             return $query->where('contracts.status', $data);
+        })->when($request->monthly_fee, function ($query, $data) {
+            return $query->where('contracts.monthly_fee', $data);
+        })->when($request->tension, function ($query, $data) {
+            return $query->where('contracts.tension', $data);
+        })->when($request->power, function ($query, $data) {
+            return $query->where('contracts.power', $data);
+        })->when($request->cicle, function ($query, $data) {
+            return $query->where('contracts.cicle', $data);
+        })->when($request->tariff, function ($query, $data) {
+            return $query->where('contracts.tariff', $data);
+        })->when($request->reception_phase, function ($query, $data) {
+            return $query->where('contracts.reception_phase', $data);
+        })->when($request->gas_pressure, function ($query, $data) {
+            return $query->where('contracts.gas_pressure', $data);
+        })->when($request->gas_scalation, function ($query, $data) {
+            return $query->where('contracts.gas_scalation', $data);
+        })->when($request->gas_tariff, function ($query, $data) {
+            return $query->where('contracts.gas_tariff', $data);
+        })->when($request->gas_market, function ($query, $data) {
+            return $query->where('contracts.gas_market', $data);
+        })->when($request->energy_market, function ($query, $data) {
+            return $query->where('contracts.energy_market', $data);
+        })->when($request->type_of_service, function ($query, $data) {
+            return $query->where('contracts.type_of_service', $data);
+        })->when($request->user, function ($query, $data) {
+            return $query->where('contracts.user_id', $data);
         })->when($request->provider_id, function ($query, $data) {
             return $query->where('contracts.provider_id', $data);
         })->when($request->start_date, function ($query, $startDate) {
             return $query->where('contracts.start_date', '>=', $startDate);
         })->when($request->end_date, function ($query, $endDate) {
             return $query->where('contracts.end_date', '<=', $endDate);
-        })->select(['contracts.*','p.name as p_name','c.id as c_id','c.name as c_name','c.image as c_image'])->get();
+        })->select(['contracts.*','u.name as u_name','c.vat_number','c.phone','c.email','p.name as p_name','c.id as c_id','c.name as c_name','c.image as c_image'])->get();
+        
         $provider=Provider::UserWise()->get();
         $userType=Auth::user()->hasRole('admin');
         return view('contract/contract_index',compact('contract','provider','userType'));

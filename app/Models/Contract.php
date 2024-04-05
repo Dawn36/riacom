@@ -58,6 +58,13 @@ class Contract extends Model
         );
     }
 
+    protected function renewsInDate(): Attribute
+    {
+        return Attribute::make(
+            get: fn (string $value) => date('d M Y',strtotime($value)),
+        );
+    }
+
     public  function scopeUserWise($query): void
     {
         if(Auth::user()->user_type == 'user')
