@@ -6,59 +6,59 @@
         data-kt-scroll-offset="200px">
         <div class="row g-5">
             <div class="col-12 col-md-6">
-                <label class="fs-6 fw-semibold mb-2">Name</label>
-                <input type="text" class="form-control form-control-solid" placeholder="Enter Name" name="name" />
+                <label class="fs-6 fw-semibold mb-2">{{ __('lead.Name') }}</label>
+                <input type="text" class="form-control form-control-solid" placeholder="{{ __('lead.Enter Name') }}" name="name" />
             </div>
             <div class="col-12 col-md-6">
-                <label class="fs-6 fw-semibold mb-2">Email</label>
-                <input type="text" class="form-control form-control-solid" placeholder="Enter Email" name="email" />
+                <label class="fs-6 fw-semibold mb-2">{{ __('lead.Email') }}</label>
+                <input type="text" class="form-control form-control-solid" placeholder="{{ __('lead.Enter Email') }}" name="email" />
             </div>
             <div class="col-12">
-                <label class="fs-6 fw-semibold mb-2">Message</label>
+                <label class="fs-6 fw-semibold mb-2">{{ __('lead.Message') }}</label>
                 <textarea name="message" class="form-control form-control-solid" cols="30" rows="5"></textarea>
             </div>
             <div class="col-12 col-md-6">
-                <label class="fs-6 fw-semibold mb-2">Type of Service</label>
-                <input type="text" class="form-control form-control-solid" placeholder="Enter Type of Service" name="type_of_service" />
+                <label class="fs-6 fw-semibold mb-2">{{ __('lead.Type of Service') }}</label>
+                <input type="text" class="form-control form-control-solid" placeholder="{{ __('lead.Enter Type of Service') }}" name="type_of_service" />
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">Status</label>
-                <select name="status" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="Select Status" data-allow-clear="true" required>
+                <label class="required fs-6 fw-bold mb-2">{{ __('lead.Status') }}</label>
+                <select name="status" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="{{ __('lead.Select Status') }}" data-allow-clear="true" required>
                     <option></option>
-                    <option value="lead">Lead</option>
-                    <option value="client">Client</option>
+                    <option value="lead">{{ __('lead.Lead') }}</option>
+                    <option value="client">{{ __('lead.Client') }}</option>
                 </select>
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">District</label>
-                <select name="district" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="Select District" data-allow-clear="true" required>
+                <label class="required fs-6 fw-bold mb-2">{{ __('lead.District') }}</label>
+                <select name="district" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="{{ __('lead.Select District') }}" data-allow-clear="true" required>
                     <option></option>
-                    <option value="Aveiro">Aveiro</option>
-                    <option value="Beja">Beja</option>
-                    <option value="Braga">Braga</option>
-                    <option value="Bragança">Bragança</option>
-                    <option value="Castelo Branco">Castelo Branco</option>
-                    <option value="Coimbra">Coimbra</option>
-                    <option value="Évora">Évora</option>
-                    <option value="Faro">Faro</option>
-                    <option value="Guarda">Guarda</option>
-                    <option value="Leiria">Leiria</option>
-                    <option value="Lisboa">Lisboa</option>
-                    <option value="Portalegre">Portalegre</option>
-                    <option value="Porto">Porto</option>
-                    <option value="Região Autónoma dos Açores">Região Autónoma dos Açores</option>
-                    <option value="Região Autónoma da Madeira">Região Autónoma da Madeira</option>
-                    <option value="Santarém">Santarém</option>
-                    <option value="Setúbal">Setúbal</option>
-                    <option value="Viana do Castelo">Viana do Castelo</option>
-                    <option value="Vila Real">Vila Real</option>
-                    <option value="Viseu">Viseu</option>
+                    <option value="Aveiro">{{ __('lead.Aveiro') }}</option>
+                    <option value="Beja">{{ __('lead.Beja') }}</option>
+                    <option value="Braga">{{ __('lead.Braga') }}</option>
+                    <option value="Bragança">{{ __('lead.Bragança') }}</option>
+                    <option value="Castelo Branco">{{ __('lead.Castelo Branco') }}</option>
+                    <option value="Coimbra">{{ __('lead.Coimbra') }}</option>
+                    <option value="Évora">{{ __('lead.Évora') }}</option>
+                    <option value="Faro">{{ __('lead.Faro') }}</option>
+                    <option value="Guarda">{{ __('lead.Guarda') }}</option>
+                    <option value="Leiria">{{ __('lead.Leiria') }}</option>
+                    <option value="Lisboa">{{ __('lead.Lisboa') }}</option>
+                    <option value="Portalegre">{{ __('lead.Portalegre') }}</option>
+                    <option value="Porto">{{ __('lead.Porto') }}</option>
+                    <option value="Região Autónoma dos Açores">{{ __('lead.Região Autónoma dos Açores') }}</option>
+                    <option value="Região Autónoma da Madeira">{{ __('lead.Região Autónoma da Madeira') }}</option>
+                    <option value="Santarém">{{ __('lead.Santarém') }}</option>
+                    <option value="Setúbal">{{ __('lead.Setúbal') }}</option>
+                    <option value="Viana do Castelo">{{ __('lead.Viana do Castelo') }}</option>
+                    <option value="Vila Real">{{ __('lead.Vila Real') }}</option>
+                    <option value="Viseu">{{ __('lead.Viseu') }}</option>
                 </select>
             </div>
             @if(Auth::user()->hasRole('admin'))
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">User</label>
-                <select name="user" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="Select User" data-allow-clear="true" required>
+                <label class="required fs-6 fw-bold mb-2">{{ __('lead.User') }}</label>
+                <select name="user" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="{{ __('lead.Select User') }}" data-allow-clear="true" required>
                     <option></option>
                     @foreach ($user as $item)
                         <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -71,10 +71,10 @@
         </div>
     </div>
     <div class="modal-footer flex-center">
-        <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</button>
+        <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">{{ __('lead.Cancel') }}</button>
         <button id="submitbutton" type="button" onclick="addUpdateData('add_form','modal_large','yes')" class="btn btn-lg btn-primary">
-            <label class="indicator-label">Submit</label>
-            <label class="indicator-progress">Please wait...
+            <label class="indicator-label">{{ __('lead.Submit') }}</label>
+            <label class="indicator-progress">{{ __('lead.Please wait...') }}
                 <label class="spinner-border spinner-border-sm align-middle ms-2"></label></label>
         </button>
     </div>

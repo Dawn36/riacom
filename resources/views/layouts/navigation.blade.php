@@ -23,11 +23,11 @@
                 <div class="menu-item">
                     @if(Auth::user()->hasRole('admin'))
                     <div class="menu-content">
-                        <span class="menu-heading fw-bold text-uppercase fs-7">Admin</span>
+                        <span class="menu-heading fw-bold text-uppercase fs-7">{{ __('layout.Admin') }}</span>
                     </div>
                     @else
                     <div class="menu-content">
-                        <span class="menu-heading fw-bold text-uppercase fs-7">User</span>
+                        <span class="menu-heading fw-bold text-uppercase fs-7">{{ __('layout.User') }}</span>
                     </div>
                     @endif
                 </div>
@@ -36,7 +36,7 @@
                         <span class="menu-icon">
                             <i class="ki-outline ki-chart-simple-2 fs-2"></i>
                         </span>
-                        <span class="menu-title">Dashboard</span>
+                        <span class="menu-title">{{ __('layout.Dashboard') }}</span>
                     </a>
                 </div>
                 <div class="menu-item">
@@ -44,7 +44,7 @@
                         <span class="menu-icon">
                             <i class="ki-outline ki-document fs-2"></i>
                         </span>
-                        <span class="menu-title">Contracts</span>
+                        <span class="menu-title">{{ __('layout.Contracts') }}</span>
                     </a>
                 </div>
                 <div class="menu-item">
@@ -52,7 +52,7 @@
                         <span class="menu-icon">
                             <i class="ki-outline ki-user-tick fs-2"></i>
                         </span>
-                        <span class="menu-title">Clients</span>
+                        <span class="menu-title">{{ __('layout.Clients') }}</span>
                     </a>
                 </div>
                 <div class="menu-item">
@@ -60,7 +60,7 @@
                         <span class="menu-icon">
                             <i class="ki-outline ki-data fs-2"></i>
                         </span>
-                        <span class="menu-title">Leads</span>
+                        <span class="menu-title">{{ __('layout.Leads') }}</span>
                     </a>
                 </div>
                 <div class="menu-item">
@@ -68,7 +68,7 @@
                         <span class="menu-icon">
                             <i class="ki-outline ki-office-bag fs-2"></i>
                         </span>
-                        <span class="menu-title">Providers</span>
+                        <span class="menu-title">{{ __('layout.Providers') }}</span>
                     </a>
                 </div>
                 @if(Auth::user()->hasRole('admin'))
@@ -77,7 +77,7 @@
                         <span class="menu-icon">
                             <i class="ki-outline ki-people fs-2"></i>
                         </span>
-                        <span class="menu-title">Users</span>
+                        <span class="menu-title">{{ __('layout.Users') }}</span>
                     </a>
                 </div>
                 <div class="menu-item">
@@ -85,13 +85,13 @@
                         <span class="menu-icon">
                             <i class="ki-outline ki-security-user fs-2"></i>
                         </span>
-                        <span class="menu-title">Admins</span>
+                        <span class="menu-title">{{ __('layout.Admins') }}</span>
                     </a>
                 </div>
                 @endif
                 <div class="menu-item pt-5">
                     <div class="menu-content">
-                        <span class="menu-heading fw-bold text-uppercase fs-7">Account</span>
+                        <span class="menu-heading fw-bold text-uppercase fs-7">{{ __('layout.Account') }}</span>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -99,7 +99,7 @@
                         <span class="menu-icon">
                             <i class="ki-outline ki-setting-4 fs-2"></i>
                         </span>
-                        <span class="menu-title">Account Settings</span>
+                        <span class="menu-title">{{ __('layout.Account Settings') }}</span>
                     </a>
                 </div>
             </div>

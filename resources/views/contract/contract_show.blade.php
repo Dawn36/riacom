@@ -6,16 +6,16 @@
                 <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
                     <div class="page-title d-flex flex-column justify-content-center gap-1 me-3">
                         <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bold fs-3 m-0">
-                            View Contract Details</h1>
+                            {{ __('contract.View Contract Details') }}</h1>
                         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
                             <li class="breadcrumb-item text-muted">
-                                <a href="{{ route('dashboard') }}" class="text-muted text-hover-primary">Home</a>
+                                <a href="{{ route('dashboard') }}" class="text-muted text-hover-primary">{{ __('contract.Home') }}</a>
                             </li>
                             <li class="breadcrumb-item">
                                 <span class="bullet bg-gray-400 w-5px h-2px"></span>
                             </li>
                             <li class="breadcrumb-item text-muted">
-                                <a class="text-muted">Contract</a>
+                                <a class="text-muted">{{ __('contract.Contract') }}</a>
                             </li>
                         </ul>
                     </div>
@@ -32,76 +32,76 @@
                     <div class="card-header cursor-pointer">
                         <!--begin::Card title-->
                         <div class="card-title m-0">
-                            <h3 class="fw-bold m-0">Contract Details</h3>
+                            <h3 class="fw-bold m-0">{{ __('contract.Contract Details') }}</h3>
                         </div>
                         <!--end::Card title-->
                         <!--begin::Action-->
                         <button type="button" class="btn btn-sm btn-light-primary align-self-center"
-                            onclick="openModalBox('modal_large','{{ route('contract.edit', $contract->id) }}','Edit Contract')">
-                            <i class="ki-outline ki-pencil fs-3"></i>Edit Contract</button>
+                            onclick="openModalBox('modal_large','{{ route('contract.edit', $contract->id) }}','{{ __('contract.Edit Contract') }}')">
+                            <i class="ki-outline ki-pencil fs-3"></i>{{ __('contract.Edit Contract') }}</button>
                         <!--end::Action-->
                     </div>
                     <div class="card-body p-9">
                         <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Client Name</label>
+                            <label class="col-lg-4 fw-semibold text-muted">{{ __('contract.Client Name') }}</label>
                             <div class="col-lg-8">
                                 <span class="fw-bold fs-6 text-gray-800">{{ $client->name }}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Contract Name</label>
+                            <label class="col-lg-4 fw-semibold text-muted">{{ __('contract.Contract Name') }}</label>
                             <div class="col-lg-8">
                                 <span class="fw-bold fs-6 text-gray-800">{{ $contract->name }}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Start Date</label>
+                            <label class="col-lg-4 fw-semibold text-muted">{{ __('contract.Start Date') }}</label>
                             <div class="col-lg-8">
                                 <span class="fw-bold fs-6 text-gray-800">{{ $contract->start_date }}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">End Date</label>
+                            <label class="col-lg-4 fw-semibold text-muted">{{ __('contract.End Date') }}</label>
                             <div class="col-lg-8">
                                 <span class="fw-bold fs-6 text-gray-800">{{ $contract->end_date }}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Duration</label>
+                            <label class="col-lg-4 fw-semibold text-muted">{{ __('contract.Duration') }}</label>
                             <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">{{ $contract->duration }} months</span>
+                                <span class="fw-bold fs-6 text-gray-800">{{ $contract->duration }} {{ __('contract.months') }}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Type of Service</label>
+                            <label class="col-lg-4 fw-semibold text-muted">{{ __('contract.Type of Service') }}</label>
                             <div class="col-lg-8">
                                 <span class="fw-bold fs-6 text-gray-800">{{ $contract->type_of_service }}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Monthly Fee in EUR €</label>
+                            <label class="col-lg-4 fw-semibold text-muted">{{ __('contract.Monthly Fee in EUR €') }}</label>
                             <div class="col-lg-8">
                                 <span class="fw-bold fs-6 text-gray-800">{{ $contract->monthly_fee }} €</span>
                             </div>
                         </div>
                         <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Provider</label>
+                            <label class="col-lg-4 fw-semibold text-muted">{{ __('contract.Provider') }}</label>
                             <div class="col-lg-8">
                                 <span class="fw-bold fs-6 text-gray-800">{{ $provider->name }}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Status</label>
+                            <label class="col-lg-4 fw-semibold text-muted">{{ __('contract.Status') }}</label>
                             <div class="col-lg-8">
-                                <div class="badge badge-light-{{ $contract->status == 'Active' ? 'success' : 'danger' }}">{{ $contract->status }}</div>
+                                <div class="badge badge-light-{{ $contract->status == 'Active' ? 'success' : 'danger' }}">{{ __('contract.'.$contract->status) }}</div>
                             </div>
                         </div>
                         <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Contract</label>
+                            <label class="col-lg-4 fw-semibold text-muted">{{ __('contract.Contract') }}</label>
                             <div class="col-lg-8">
                                 <a href="{{ asset($provider->contract_path) }}"
                                     class="btn btn-sm btn-flex btn-light-primary" download="">
-                                    <i class="ki-outline ki-cloud-download fs-3"></i>Download</a>
+                                    <i class="ki-outline ki-cloud-download fs-3"></i>{{ __('contract.Download') }}</a>
                             </div>
                         </div>
                     </div>
@@ -112,16 +112,16 @@
                     <div class="card-header border-0">
                         <!--begin::Card title-->
                         <div class="card-title flex-column">
-                            <h2 class="mb-1">Documents</h2>
-                            <div class="fs-6 fw-semibold text-muted">Total {{ count($contractFile) }} document(s)</div>
+                            <h2 class="mb-1">{{ __('contract.Documents') }}</h2>
+                            <div class="fs-6 fw-semibold text-muted">{{ __('contract.Total') }} {{ count($contractFile) }} {{ __('contract.document(s)') }}</div>
                         </div>
                         <!--end::Card title-->
                         <!--begin::Card toolbar-->
                         <div class="card-toolbar">
                             <!--begin::Filter-->
                             <button type="button" class="btn btn-sm btn-flex btn-light-primary"
-                                onclick="openModalBox('modal_large','{{ route('contract-file.create') }}','Add Document','{{ $contract->id }}')">
-                                <i class="ki-outline ki-fasten fs-3"></i>Add Documents</button>
+                                onclick="openModalBox('modal_large','{{ route('contract-file.create') }}','{{ __('contract.Add Document') }}','{{ $contract->id }}')">
+                                <i class="ki-outline ki-fasten fs-3"></i>{{ __('contract.Add Document') }}</button>
                             <!--end::Filter-->
                         </div>
                         <!--end::Card toolbar-->
@@ -135,8 +135,8 @@
                             <table class="table align-middle table-row-dashed fs-6 gy-3 kt_datatable_example_1">
                                 <thead>
                                     <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                        <th class="min-w-50px">Name</th>
-                                        <th class="min-w-125px">Date Added</th>
+                                        <th class="min-w-50px">{{ __('contract.Name') }}</th>
+                                        <th class="min-w-125px">{{ __('contract.Date Added') }}</th>
                                         <th class="w-125px"></th>
                                     </tr>
                                 </thead>
@@ -179,8 +179,7 @@
                                                                                         fill="currentColor" />
                                                                                 </svg>
                                                                             </span>
-                                                                            <div class="fs-6 text-dark">Share Link
-                                                                                Generated</div>
+                                                                            <div class="fs-6 text-dark">{{ __('contract.Share Link Generated') }}</div>
                                                                         </div>
                                                                         <input type="text"
                                                                             class="form-control form-control-sm"
@@ -212,12 +211,12 @@
                                                             data-kt-menu="true">
                                                             <div class="menu-item px-3">
                                                                 <a href="{{ $item->path }}" class="menu-link px-3"
-                                                                    download="">Download File</a>
+                                                                    download="">{{ __('contract.Download File') }}</a>
                                                             </div>
                                                             <div class="menu-item px-3">
                                                                 <a href="#" class="menu-link text-danger px-3"
-                                                                    onclick="deleteSweerAlert('This file has been deleted.','{{ route('contract-file.destroy', $item->id) }}','{{ route('contract.show', $contract->id) }}')"
-                                                                    data-kt-filemanager-table-filter="delete_row">Delete</a>
+                                                                    onclick="deleteSweerAlert('{{ __('contract.This file has been deleted') }}.','{{ route('contract-file.destroy', $item->id) }}','{{ route('contract.show', $contract->id) }}')"
+                                                                    data-kt-filemanager-table-filter="delete_row">{{ __('contract.Delete') }}</a>
                                                             </div>
                                                         </div>
                                                     </div>

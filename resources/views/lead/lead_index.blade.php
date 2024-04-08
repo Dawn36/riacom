@@ -5,10 +5,10 @@
             <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex flex-stack flex-wrap">
                 <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
                     <div class="page-title d-flex flex-column justify-content-center gap-1 me-3">
-                        <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bold fs-3 m-0">Leads List</h1>
+                        <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bold fs-3 m-0">{{ __('lead.Leads List') }}</h1>
                         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
                             <li class="breadcrumb-item text-muted">
-                                <a href="{{ route('dashboard') }}" class="text-muted text-hover-primary">Home</a>
+                                <a href="{{ route('dashboard') }}" class="text-muted text-hover-primary">{{ __('lead.Home') }}</a>
                             </li>
                         </ul>
                     </div>
@@ -27,13 +27,13 @@
                         <div class="card-title">
                             <div class="d-flex align-items-center position-relative my-1">
                                 <i class="ki-outline ki-magnifier fs-3 position-absolute ms-5"></i>
-                                <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-13 search" placeholder="Search ..." />
+                                <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-13 search" placeholder="{{ __('lead.Search ...') }}" />
                             </div>
                         </div>
                         <div class="card-toolbar">
                             <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                                <button type="button" class="btn btn-primary" onclick="openModalBox('modal_large','{{ route('lead.create') }}','Add Lead')">
-                                    <i class="ki-outline ki-plus fs-2"></i>Add Lead</button>
+                                <button type="button" class="btn btn-primary" onclick="openModalBox('modal_large','{{ route('lead.create') }}','{{ __('lead.Add Lead') }}')">
+                                    <i class="ki-outline ki-plus fs-2"></i>{{ __('lead.Add Lead') }}</button>
                             </div>
                         </div>
                     </div>
@@ -44,13 +44,13 @@
                         <table class="table align-middle table-row-dashed fs-6 gy-5 kt_datatable_example_1" id="kt_datatable_example_1">
                             <thead>
                                 <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0 nowrap">
-                                    <th>Name & Email</th>
-                                    <th>Type of Service</th>
-                                    <th>District</th>
-                                    <th class="min-w-300px">Message</th>
-                                    <th>Status</th>
-                                    <th>Creation date</th>
-                                    <th>User</th>
+                                    <th>{{ __('lead.Name & Email') }}</th>
+                                    <th>{{ __('lead.Type of Service') }}</th>
+                                    <th>{{ __('lead.District') }}</th>
+                                    <th class="min-w-300px">{{ __('lead.Message') }}</th>
+                                    <th>{{ __('lead.Status') }}</th>
+                                    <th>{{ __('lead.Creation date') }}</th>
+                                    <th>{{ __('lead.User') }}</th>
                                     <th class="text-end min-w-100px"></th>
                                 </tr>
                             </thead>
@@ -71,18 +71,18 @@
                                         {{ $item->message }}
                                     </td>
                                     <td>
-                                        <div class="badge badge-light-{{ $item->status == 'lead' ? 'warning' : 'primary' }} fw-bold">{{ $item->status }}</div>
+                                        <div class="badge badge-light-{{ $item->status == 'lead' ? 'warning' : 'primary' }} fw-bold">{{ __('lead.'+$item->status) }}</div>
                                     </td>
                                     <td>{{ $item->created_at }}</td>
                                     <td>{{ $item->user_name }}</td>
                                     <td class="text-end nowrap">
-                                        <button class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-primary" onclick="openModalBox('modal_large','{{ route('lead.edit',$item->id) }}','Edit Lead')">
-                                            <i class="ki-duotone ki-pencil fs-1" data-bs-toggle="tooltip" title="Edit">
+                                        <button class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-primary" onclick="openModalBox('modal_large','{{ route('lead.edit',$item->id) }}','{{ __('lead.Edit Lead') }}')">
+                                            <i class="ki-duotone ki-pencil fs-1" data-bs-toggle="tooltip" title="{{ __('lead.Edit Lead') }}">
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>
                                             </i>
                                         </button>
-                                        <button type="button" class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-danger " onclick="deleteSweerAlert('This lead has been deleted.','{{ route('lead.destroy',$item->id) }}','{{route('lead.index')}}')" data-bs-toggle="tooltip" title="Delete" data-bs-placement="top">
+                                        <button type="button" class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-danger " onclick="deleteSweerAlert('{{ __('lead.This lead has been deleted') }}.','{{ route('lead.destroy',$item->id) }}','{{route('lead.index')}}')" data-bs-toggle="tooltip" title="{{ __('lead.Delete') }}" data-bs-placement="top">
                                             <span class="svg-icon svg-icon-2">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                     <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>

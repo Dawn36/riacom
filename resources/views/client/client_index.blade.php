@@ -6,10 +6,10 @@
                 <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
                     <div class="page-title d-flex flex-column justify-content-center gap-1 me-3">
                         <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bold fs-3 m-0">
-                            Clients List</h1>
+                            {{ __('client.Clients List') }}</h1>
                         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
                             <li class="breadcrumb-item text-muted">
-                                <a href="{{ route('dashboard') }}" class="text-muted text-hover-primary">Home</a>
+                                <a href="{{ route('dashboard') }}" class="text-muted text-hover-primary">{{ __('client.Home') }}</a>
                             </li>
                         </ul>
                     </div>
@@ -30,54 +30,54 @@
                                 <i class="ki-outline ki-magnifier fs-3 position-absolute ms-5"></i>
                                 <input type="text" data-kt-user-table-filter="search"
                                     class="form-control form-control-solid w-250px ps-13 search"
-                                    placeholder="Search ..." />
+                                    placeholder="{{ __('client.Search ...') }}" />
                             </div>
                         </div>
                         <div class="card-toolbar">
                             <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
                                 <button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click"
                                     data-kt-menu-placement="bottom-end">
-                                    <i class="ki-outline ki-filter fs-2"></i>Filter</button>
+                                    <i class="ki-outline ki-filter fs-2"></i>{{ __('client.Filter') }}</button>
                                 <div class="menu menu-sub menu-sub-dropdown w-300px w-md-325px" data-kt-menu="true">
                                     <div class="px-7 py-5">
-                                        <div class="fs-5 text-dark fw-bold">Filter Options</div>
+                                        <div class="fs-5 text-dark fw-bold">{{ __('client.Filter Options') }}</div>
                                     </div>
                                     <div class="separator border-gray-200"></div>
                                     <form  method="GET"
                                         action="{{ route('client.index') }}">
                                         <div class="px-7 py-5" data-kt-user-table-filter="form">
                                             <div class="mb-10">
-                                                <label class="form-label fs-6 fw-semibold">Status:</label>
+                                                <label class="form-label fs-6 fw-semibold">{{ __('client.Status') }}:</label>
                                                 <select class="form-select form-select-solid fw-bold" name="status"
                                                     data-kt-select2="true" data-placeholder="Select option"
                                                     data-allow-clear="true" data-kt-user-table-filter="role"
                                                     data-hide-search="true">
                                                     <option></option>
-                                                    <option value="to be contacted" {{ request()->status == 'to be contacted' ? 'selected' : '' }}>To be Contacted</option>
-                                                    <option value="contact" {{ request()->status == 'contact' ? 'selected' : '' }}>Contact</option>
-                                                    <option value="under negotiation" {{ request()->status == 'under negotiation' ? 'selected' : '' }}>Under Negotiation</option>
-                                                    <option value="active" {{ request()->status == 'active' ? 'selected' : '' }}>Active</option>
-                                                    <option value="inactive" {{ request()->status == 'inactive' ? 'selected' : '' }}>Inactive</option>
-                                                    <option value="pending" {{ request()->status == 'pending' ? 'selected' : '' }}>Pending</option>
-                                                    <option value="not interested" {{ request()->status == 'not interested' ? 'selected' : '' }}>Not Interested</option>
-                                                    <option value="rejected" {{ request()->status == 'rejected' ? 'selected' : '' }}>Rejected</option>
+                                                    <option value="to be contacted" {{ request()->status == 'to be contacted' ? 'selected' : '' }}>{{ __('client.To be Contacted') }}</option>
+                                                    <option value="contact" {{ request()->status == 'contact' ? 'selected' : '' }}>{{ __('client.Contact') }}</option>
+                                                    <option value="under negotiation" {{ request()->status == 'under negotiation' ? 'selected' : '' }}>{{ __('client.Under Negotiation') }}</option>
+                                                    <option value="active" {{ request()->status == 'active' ? 'selected' : '' }}>{{ __('client.Active') }}</option>
+                                                    <option value="inactive" {{ request()->status == 'inactive' ? 'selected' : '' }}>{{ __('client.Inactive') }}</option>
+                                                    <option value="pending" {{ request()->status == 'pending' ? 'selected' : '' }}>{{ __('client.Pending') }}</option>
+                                                    <option value="not interested" {{ request()->status == 'not interested' ? 'selected' : '' }}>{{ __('client.Not Interested') }}</option>
+                                                    <option value="rejected" {{ request()->status == 'rejected' ? 'selected' : '' }}>{{ __('client.Rejected') }}</option>
                                                 </select>
                                             </div>
                                             <div class="d-flex justify-content-end">
                                                 <a href="{{ route('client.index') }}"
                                                     class="btn btn-light btn-active-light-primary fw-semibold me-2 px-6"
                                                     data-kt-menu-dismiss="true"
-                                                    data-kt-user-table-filter="reset">Reset</a>
+                                                    data-kt-user-table-filter="reset">{{ __('client.Reset') }}</a>
                                                 <button type="submit" class="btn btn-primary fw-semibold px-6"
                                                     data-kt-menu-dismiss="true"
-                                                    data-kt-user-table-filter="filter">Apply</button>
+                                                    data-kt-user-table-filter="filter">{{ __('client.Apply') }}</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                                 <button type="button" class="btn btn-primary"
-                                    onclick="openModalBox('modal_large','{{ route('client.create') }}','Add Client')">
-                                    <i class="ki-outline ki-plus fs-2"></i>Add Client</button>
+                                    onclick="openModalBox('modal_large','{{ route('client.create') }}','{{ __('client.Add Client') }}')">
+                                    <i class="ki-outline ki-plus fs-2"></i>{{ __('client.Add Client') }}</button>
                             </div>
                         </div>
                     </div>
@@ -89,12 +89,12 @@
                             id="kt_datatable_example_1">
                             <thead>
                                 <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
-                                    <th class="">Name & Job Title</th>
-                                    <th class="">Email & Phone</th>
-                                    <th class="">Status</th>
-                                    <th class="min-w-125px"># Of Phone Calls</th>
-                                    <th class="min-w-125px">Creation Date</th>
-                                    <th class="text-end min-w-100px">Actions</th>
+                                    <th class="">{{ __('client.Name & Job Title') }}</th>
+                                    <th class="">{{ __('client.Email & Phone') }}</th>
+                                    <th class="">{{ __('client.Status') }}</th>
+                                    <th class="min-w-125px">{{ __('client.# Of Phone Calls') }}</th>
+                                    <th class="min-w-125px">{{ __('client.Creation Date') }}</th>
+                                    <th class="text-end min-w-100px">{{ __('client.Actions') }}</th>
                                 </tr>
                             </thead>
                             <tbody class="text-gray-600 fw-semibold">
@@ -125,47 +125,44 @@
                                         <td>
                                             <div class="badge badge-lg badge-light-{{ $item->status == 'inactive' || $item->status == 'rejected' ? 'danger' : 'primary' }} d-inline cursor-pointer"
                                                 data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                                {{ ucwords($item->status) }}</div>
+                                                {{ __('client.'. ucwords($item->status)) }}</div>
                                             <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3"
                                                 data-kt-menu="true">
                                                 <div class="menu-item px-3">
                                                     <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">
-                                                        Update Status</div>
+                                                        {{ __('client.Update Status') }}</div>
                                                 </div>
                                                 <div class="menu-item px-3">
                                                     <a class="menu-link px-3"
-                                                        onclick="clientStatusUpdate('To be Contacted','{{ $item->id }}',this)">To
-                                                        be Contacted</a>
+                                                        onclick="clientStatusUpdate('To be Contacted','{{ $item->id }}',this)">{{ __('client.To be Contacted') }}</a>
                                                 </div>
                                                 <div class="menu-item px-3">
                                                     <a class="menu-link px-3"
-                                                        onclick="clientStatusUpdate('Contact','{{ $item->id }}',this)">Contact</a>
+                                                        onclick="clientStatusUpdate('Contact','{{ $item->id }}',this)">{{ __('client.Contact') }}</a>
                                                 </div>
                                                 <div class="menu-item px-3">
                                                     <a class="menu-link px-3"
-                                                        onclick="clientStatusUpdate('Under Negotiation','{{ $item->id }}',this)">Under
-                                                        Negotiation</a>
+                                                        onclick="clientStatusUpdate('Under Negotiation','{{ $item->id }}',this)">{{ __('client.Under Negotiation') }}</a>
                                                 </div>
                                                 <div class="menu-item px-3">
                                                     <a class="menu-link active px-3"
-                                                        onclick="clientStatusUpdate('Active','{{ $item->id }}',this)">Active</a>
+                                                        onclick="clientStatusUpdate('Active','{{ $item->id }}',this)">{{ __('client.Active') }}</a>
                                                 </div>
                                                 <div class="menu-item px-3">
                                                     <a class="menu-link px-3"
-                                                        onclick="clientStatusUpdate('Inactive','{{ $item->id }}',this)">Inactive</a>
+                                                        onclick="clientStatusUpdate('Inactive','{{ $item->id }}',this)">{{ __('client.Inactive') }}</a>
                                                 </div>
                                                 <div class="menu-item px-3">
                                                     <a class="menu-link px-3"
-                                                        onclick="clientStatusUpdate('Pending','{{ $item->id }}',this)">Pending</a>
+                                                        onclick="clientStatusUpdate('Pending','{{ $item->id }}',this)">{{ __('client.Pending') }}</a>
                                                 </div>
                                                 <div class="menu-item px-3">
                                                     <a class="menu-link px-3"
-                                                        onclick="clientStatusUpdate('Not Interested','{{ $item->id }}',this)">Not
-                                                        Interested</a>
+                                                        onclick="clientStatusUpdate('Not Interested','{{ $item->id }}',this)">{{ __('client.Not Interested') }}</a>
                                                 </div>
                                                 <div class="menu-item px-3">
                                                     <a class="menu-link px-3"
-                                                        onclick="clientStatusUpdate('Rejected','{{ $item->id }}',this)">Rejected</a>
+                                                        onclick="clientStatusUpdate('Rejected','{{ $item->id }}',this)">{{ __('client.Rejected') }}</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -210,7 +207,7 @@
                                             @if($userType)
                                             <button
                                                 class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-primary"
-                                                onclick="openModalBox('modal_large','{{ route('client.edit', $item->id) }}','Edit Client')">
+                                                onclick="openModalBox('modal_large','{{ route('client.edit', $item->id) }}','{{ __('client.Edit Client') }}')">
                                                 <i class="ki-duotone ki-pencil fs-1" data-bs-toggle="tooltip"
                                                     title="Edit">
                                                     <span class="path1"></span>
@@ -219,11 +216,11 @@
                                             </button>
                                             <button type="button"
                                                 class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-danger "
-                                                onclick="deleteSweerAlert('This client has been deleted.','{{ route('client.destroy', $item->id) }}','{{ route('client.index') }}')"
+                                                onclick="deleteSweerAlert('{{ __('client.This client has been deleted') }}.','{{ route('client.destroy', $item->id) }}','{{ route('client.index') }}')"
                                                 data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Delete"
                                                 data-bs-original-title="Delete" data-kt-initialized="1">
                                                 <span class="svg-icon svg-icon-2" data-bs-toggle="tooltip"
-                                                    title="Delete">
+                                                    title="{{ __('client.Delete') }}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                         height="24" viewBox="0 0 24 24" fill="none">
                                                         <path

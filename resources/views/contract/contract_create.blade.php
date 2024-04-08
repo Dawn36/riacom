@@ -7,54 +7,54 @@
         <input hidden name="client_id" id="client_id" value="" />
         <div class="row g-5">
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">VAT number</label>
-                <input type="text" class="form-control form-control-solid" onkeyup="checkVatNumber()" placeholder="Search by VAT number" id="vat_number" name="vat_number" required />
-                <div class="myClass text-danger" id="vat_number_check" style="display: none">The VAT number not found.</div>
-                <div class="myClass text-success" id="vat_number_check_found" style="display: none">The VAT number found.</div>
+                <label class="required fs-6 fw-bold mb-2">{{ __('contract.VAT number') }}</label>
+                <input type="text" class="form-control form-control-solid" onkeyup="checkVatNumber()" placeholder="{{ __('contract.Search by VAT number') }}" id="vat_number" name="vat_number" required />
+                <div class="myClass text-danger" id="vat_number_check" style="display: none">{{ __('contract.The VAT number not found') }}.</div>
+                <div class="myClass text-success" id="vat_number_check_found" style="display: none">{{ __('contract.The VAT number found') }}.</div>
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">Client Name</label>
-                <input type="text" id="client_name" class="form-control form-control-solid" placeholder="Enter Client Name"
+                <label class="required fs-6 fw-bold mb-2">{{ __('contract.Client Name') }}</label>
+                <input type="text" id="client_name" class="form-control form-control-solid" placeholder="{{ __('contract.Enter Client Name') }}"
                     disabled/>
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">Client Address</label>
+                <label class="required fs-6 fw-bold mb-2">{{ __('contract.Client Address') }}</label>
                 <select name="client_address" id="client_address" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Client Address"
+                    data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Client Address') }}"
                       data-allow-clear="true" required>
                     <option></option>
                 </select>
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">Contract Name</label>
-                <input type="text" class="form-control form-control-solid" placeholder="Enter Contract Name"
+                <label class="required fs-6 fw-bold mb-2">{{ __('contract.Contract Name') }}</label>
+                <input type="text" class="form-control form-control-solid" placeholder="{{ __('contract.Enter Contract Name') }}"
                     name="name" required />
             </div>
             <div class="col-12 col-md-6">
-                <label class="fs-6 fw-bold mb-2">Start Date</label>
-                <input class="form-control form-control-solid kt_datepicker_3" placeholder="Enter Start Date"
+                <label class="fs-6 fw-bold mb-2">{{ __('contract.Start Date') }}</label>
+                <input class="form-control form-control-solid kt_datepicker_3" placeholder="{{ __('contract.Enter Start Date') }}"
                     name="start_date" id="start_date" />
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">Duration</label>
+                <label class="required fs-6 fw-bold mb-2">{{ __('contract.Duration') }}</label>
                 <input type="number" class="required form-control form-control-solid"
-                    placeholder="Enter the number of months" value="0" onkeyup="checkEndDate()" id="duration" name="duration"
+                    placeholder="{{ __('contract.Enter the number of months') }}" value="0" onkeyup="checkEndDate()" id="duration" name="duration"
                     required />
             </div>
             <div class="col-12 col-md-6">
-                <label class="fs-6 fw-bold mb-2">End Date</label>
-                <input readonly class="form-control form-control-solid kt_datepicker_2" placeholder="Enter End Date"
+                <label class="fs-6 fw-bold mb-2">{{ __('contract.End Date') }}</label>
+                <input readonly class="form-control form-control-solid kt_datepicker_2" placeholder="{{ __('contract.Enter End Date') }}"
                     name="end_date" id="end_date" />
             </div>
             <div class="col-12 col-md-6">
-                <label class="fs-6 fw-bold mb-2">Renews in…</label>
+                <label class="fs-6 fw-bold mb-2">{{ __('contract.Renews in…') }}</label>
                 <input type="number" class="form-control form-control-solid"
-                    placeholder="Enter Renews in… (no. of months)" name="renews_in" />
+                    placeholder="{{ __('contract.Enter Renews in… (no. of months)') }}" name="renews_in" />
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">Provider</label>
+                <label class="required fs-6 fw-bold mb-2">{{ __('contract.Provider') }}</label>
                 <select name="provider" id="provider" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Provider"
+                    data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Provider') }}"
                     {{ Auth::user()->hasRole('admin') == true ? 'onchange=providerUser()' : ''  }}   data-allow-clear="true" required>
                     <option></option>
                     @foreach ($provider as $item)
@@ -64,170 +64,170 @@
                 </select>
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">Monthly Fee in EUR €</label>
-                <input type="tel" class="form-control form-control-solid" placeholder="Enter Monthly Fee in EUR €"
+                <label class="required fs-6 fw-bold mb-2">{{ __('contract.Monthly Fee in EUR €') }}</label>
+                <input type="tel" class="form-control form-control-solid" placeholder="{{ __('contract.Enter Monthly Fee in EUR €') }}"
                     name="monthly_fee" required />
             </div>
             
             <div class="col-12 col-md-6">
                 <label class="fs-6 fw-bold mb-2">
-                    <span class="required">Type of Service</span>
+                    <span class="required">{{ __('contract.Type of Service') }}</span>
                     <i class="ki-outline ki-information-5 ms-1 fs-6" data-bs-toggle="tooltip"
-                        title="Select the Provider to see the Type of Service"></i>
+                        title="{{ __('contract.Select the Provider to see the Type of Service') }}"></i>
                 </label>
                 <select id="type_of_service" name="type_of_service" class="form-select form-select-solid js-example-basic-single"
                     data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true"
-                    data-placeholder="Select Type of Service" data-allow-clear="true">
+                    data-placeholder="{{ __('contract.Select Type of Service') }}" data-allow-clear="true">
                     <option></option>
                 </select>
             </div>
             
             <div class="col-12 col-md-6 col-lg-4">
-                <label class="fs-6 fw-bold mb-2">Tension</label>
+                <label class="fs-6 fw-bold mb-2">{{ __('contract.Tension') }}</label>
                 <select name="tension" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Tension"
+                    data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Tension') }}"
                     data-allow-clear="true">
                     <option></option>
-                    <option value="BTN">BTN</option>
-                    <option value="BTE">BTE</option>
-                    <option value="MT">MT</option>
-                    <option value="AT">AT</option>
-                    <option value="MAT">MAT</option>
+                    <option value="BTN">{{ __('contract.BTN') }}</option>
+                    <option value="BTE">{{ __('contract.BTE') }}</option>
+                    <option value="MT">{{ __('contract.MT') }}</option>
+                    <option value="AT">{{ __('contract.AT') }}</option>
+                    <option value="MAT">{{ __('contract.MAT') }}</option>
                 </select>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <label class="fs-6 fw-bold mb-2">Power</label>
+                <label class="fs-6 fw-bold mb-2">{{ __('contract.Power') }}</label>
                 <select name="power" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Power"
+                    data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Power') }}"
                     data-allow-clear="true">
                     <option></option>
-                    <option value="1,15">1,15</option>
-                    <option value="2,30">2,30</option>
-                    <option value="3,45">3,45</option>
-                    <option value="4,60">4,60</option>
-                    <option value="5,75">5,75</option>
-                    <option value="6,90">6,90</option>
-                    <option value="10,35">10,35</option>
-                    <option value="13,80">13,80</option>
-                    <option value="17,25">17,25</option>
-                    <option value="20,70">20,70</option>
-                    <option value="27,60">27,60</option>
-                    <option value="34,50">34,50</option>
-                    <option value="41,40">41,40</option>
+                    <option value="1,15">{{ __('contract.1,15') }}</option>
+                    <option value="2,30">{{ __('contract.2,30') }}</option>
+                    <option value="3,45">{{ __('contract.3,45') }}</option>
+                    <option value="4,60">{{ __('contract.4,60') }}</option>
+                    <option value="5,75">{{ __('contract.5,75') }}</option>
+                    <option value="6,90">{{ __('contract.6,90') }}</option>
+                    <option value="10,35">{{ __('contract.10,35') }}</option>
+                    <option value="13,80">{{ __('contract.13,80') }}</option>
+                    <option value="17,25">{{ __('contract.17,25') }}</option>
+                    <option value="20,70">{{ __('contract.20,70') }}</option>
+                    <option value="27,60">{{ __('contract.27,60') }}</option>
+                    <option value="34,50">{{ __('contract.34,50') }}</option>
+                    <option value="41,40">{{ __('contract.41,40') }}</option>
                 </select>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <label class="fs-6 fw-bold mb-2">Cicle</label>
+                <label class="fs-6 fw-bold mb-2">{{ __('contract.Cicle') }}</label>
                 <select name="cicle" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Cicle"
+                    data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Cicle') }}"
                     data-allow-clear="true">
                     <option></option>
-                    <option value="No cicle">No cicle</option>
-                    <option value="Daily">Daily</option>
-                    <option value="Weekly">Weekly</option>
-                    <option value="Optional">Optional</option>
+                    <option value="No cicle">{{ __('contract.No cicle') }}</option>
+                    <option value="Daily">{{ __('contract.Daily') }}</option>
+                    <option value="Weekly">{{ __('contract.Weekly') }}</option>
+                    <option value="Optional">{{ __('contract.Optional') }}</option>
                 </select>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <label class="fs-6 fw-bold mb-2">Tariff</label>
+                <label class="fs-6 fw-bold mb-2">{{ __('contract.Tariff') }}</label>
                 <select name="tariff" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Tariff"
+                    data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Tariff') }}"
                     data-allow-clear="true">
                     <option></option>
-                    <option value="Simple">Simple</option>
-                    <option value="Bi-hourly">Bi-hourly</option>
-                    <option value="Tri-hourly">Tri-hourly</option>
-                    <option value="Tetra-hourly">Tetra-hourly</option>
+                    <option value="Simple">{{ __('contract.Simple') }}</option>
+                    <option value="Bi-hourly">{{ __('contract.Bi-hourly') }}</option>
+                    <option value="Tri-hourly">{{ __('contract.Tri-hourly') }}</option>
+                    <option value="Tetra-hourly">{{ __('contract.Tetra-hourly') }}</option>
                 </select>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <label class="fs-6 fw-bold mb-2">Reception phase</label>
+                <label class="fs-6 fw-bold mb-2">{{ __('contract.Reception phase') }}</label>
                 <select name="reception_phase" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Reception phase"
+                    data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Reception phase') }}"
                     data-allow-clear="true">
                     <option></option>
-                    <option value="Monofasic">Monofasic</option>
-                    <option value="Trifasic">Trifasic</option>
+                    <option value="Monofasic">{{ __('contract.Monofasic') }}</option>
+                    <option value="Trifasic">{{ __('contract.Trifasic') }}</option>
                 </select>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <label class="fs-6 fw-bold mb-2">Gas pressure</label>
+                <label class="fs-6 fw-bold mb-2">{{ __('contract.Gas pressure') }}</label>
                 <select name="gas_pressure" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Gas pressure"
+                    data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Gas pressure') }}"
                     data-allow-clear="true">
                     <option></option>
-                    <option value="Low pressure">Low pressure</option>
-                    <option value="Mid pressure">Mid pressure</option>
-                    <option value="High pressure">High pressure</option>
+                    <option value="Low pressure">{{ __('contract.Low pressure') }}</option>
+                    <option value="Mid pressure">{{ __('contract.Mid pressure') }}</option>
+                    <option value="High pressure">{{ __('contract.High pressure') }}</option>
                 </select>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <label class="fs-6 fw-bold mb-2">Gas Scalation</label>
+                <label class="fs-6 fw-bold mb-2">{{ __('contract.Gas Scalation') }}</label>
                 <select name="gas_scalation" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Gas Scalation"
+                    data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Gas Scalation') }}"
                     data-allow-clear="true">
                     <option></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="More than 10.000m3">More than 10.000m3</option>
+                    <option value="1">{{ __('contract.1') }}</option>
+                    <option value="2">{{ __('contract.2') }}</option>
+                    <option value="3">{{ __('contract.3') }}</option>
+                    <option value="4">{{ __('contract.4') }}</option>
+                    <option value="More than 10.000m3">{{ __('contract.More than 10.000m3') }}</option>
                 </select>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <label class="fs-6 fw-bold mb-2">Gas Tariff</label>
+                <label class="fs-6 fw-bold mb-2">{{ __('contract.Gas Tariff') }}</label>
                 <select name="gas_tariff" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Gas Tariff"
+                    data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Gas Tariff') }}"
                     data-allow-clear="true">
                     <option></option>
-                    <option value="Short use">Short use</option>
-                    <option value="Long use">Long use</option>
-                    <option value="Monthly">Monthly</option>
+                     <option value="Short use">{{ __('contract.Short use') }}</option>
+                    <option value="Long use">{{ __('contract.Long use') }}</option>
+                    <option value="Monthly">{{ __('contract.Monthly') }}</option>
                 </select>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <label class="fs-6 fw-bold mb-2">Energy Market</label>
+                <label class="fs-6 fw-bold mb-2">{{ __('contract.Energy Market') }}</label>
                 <select name="energy_market" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Energy Market"
+                    data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Energy Market') }}"
                     data-allow-clear="true">
                     <option></option>
-                    <option value="Indexed Market">Indexed Market</option>
-                    <option value="Fixed Market">Fixed Market</option>
-                    <option value="Mixed Market">Mixed Market</option>
+                    <option value="Indexed Market">{{ __('contract.Indexed Market') }}</option>
+                    <option value="Fixed Market">{{ __('contract.Fixed Market') }}</option>
+                    <option value="Mixed Market">{{ __('contract.Mixed Market') }}</option>
                 </select>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <label class="fs-6 fw-bold mb-2">Gas Market</label>
+                <label class="fs-6 fw-bold mb-2">{{ __('contract.Gas Market') }}</label>
                 <select name="gas_market" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Gas Market"
+                    data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Gas Market') }}"
                     data-allow-clear="true">
                     <option></option>
-                    <option value="Indexed Market">Indexed Market</option>
-                    <option value="Fixed Market">Fixed Market</option>
-                    <option value="Mixed Market">Mixed Market</option>
+                    <option value="Indexed Market">{{ __('contract.Indexed Market') }}</option>
+                    <option value="Fixed Market">{{ __('contract.Fixed Market') }}</option>
+                    <option value="Mixed Market">{{ __('contract.Mixed Market') }}</option>
                 </select>
             </div>
 
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">Status</label>
+                <label class="required fs-6 fw-bold mb-2">{{ __('contract.Status') }}</label>
                 <select name="status" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select Status"
+                    data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Status') }}"
                     data-allow-clear="true" required>
                     <option></option>
-                    <option value="Active">Active</option>
-                    <option value="Closed">Closed</option>
+                   <option value="Active">{{ __('contract.Active') }}</option>
+                    <option value="Closed">{{ __('contract.Closed') }}</option>
                 </select>
             </div>
             <div class="col-md-6">
-                <label class="fs-6 fw-bold mb-2">Attach Contract</label>
+                <label class="fs-6 fw-bold mb-2">{{ __('contract.Attach Contract') }}</label>
                 <input type="file" class="form-control form-control-solid" name="contract"
                     accept-language="pt" />
             </div>
             @if(Auth::user()->hasRole('admin'))
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">User</label>
+                <label class="required fs-6 fw-bold mb-2">{{ __('contract.User') }}</label>
                 <select name="user" id="user" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select User"
+                    data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select User') }}"
                     data-allow-clear="true" required>
                     <option></option>
 
@@ -239,11 +239,11 @@
         </div>
     </div>
     <div class="modal-footer flex-center">
-        <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</button>
+        <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">{{ __('contract.Cancel') }}</button>
         <button id="submitbutton" type="button" onclick="addUpdateData('add_form','modal_large','yes')"
             class="btn btn-lg btn-primary">
-            <label class="indicator-label">Submit</label>
-            <label class="indicator-progress">Please wait...
+            <label class="indicator-label">{{ __('contract.Submit') }}</label>
+            <label class="indicator-progress">{{ __('contract.Please wait...') }}
                 <label class="spinner-border spinner-border-sm align-middle ms-2"></label></label>
         </button>
     </div>

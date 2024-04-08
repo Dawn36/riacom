@@ -87,7 +87,7 @@ $path = $_SERVER['REQUEST_URI'];
                             <!--end::Search-->
                         </div>
                         <div class="app-navbar-item ms-1 ms-md-4">
-                            <h1 class="m-0 fs-6 fs-lg-3 me-3">Welcome, {{ Auth::user()->name }}
+                            <h1 class="m-0 fs-6 fs-lg-3 me-3">{{ __('layout.Welcome') }}, {{ Auth::user()->name }}
                                 <span class="svg-icon svg-icon-1">
                                     <svg class="iconify iconify--emojione" width="800px" height="800px"
                                         aria-hidden="true" foxified="" role="img" viewBox="0 0 64 64"
@@ -180,13 +180,13 @@ $path = $_SERVER['REQUEST_URI'];
 
                                 <div class="menu-item px-5 my-1">
                                     <a href="{{route('settings.create')}}" class="menu-link px-5">
-                                        Account Settings
+                                        {{ __('layout.Account Settings') }}
                                     </a>
                                 </div>
 
                                 <div class="menu-item px-5">
                                     <a href="{{route('logout')}}" class="menu-link px-5">
-                                        Sign Out
+                                        {{ __('layout.Sign Out') }}
                                     </a>
                                 </div>
                             </div>

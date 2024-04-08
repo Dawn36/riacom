@@ -5,10 +5,10 @@
             <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex flex-stack flex-wrap">
                 <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
                     <div class="page-title d-flex flex-column justify-content-center gap-1 me-3">
-                        <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bold fs-3 m-0">Providers List</h1>
+                        <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bold fs-3 m-0">{{ __('provider.Providers List') }}</h1>
                         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
                             <li class="breadcrumb-item text-muted">
-                                <a href="{{ route('dashboard') }}" class="text-muted text-hover-primary">Home</a>
+                                <a href="{{ route('dashboard') }}" class="text-muted text-hover-primary">{{ __('provider.Home') }}</a>
                             </li>
                         </ul>
                     </div>
@@ -27,13 +27,13 @@
                         <div class="card-title">
                             <div class="d-flex align-items-center position-relative my-1">
                                 <i class="ki-outline ki-magnifier fs-3 position-absolute ms-5"></i>
-                                <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-13 search" placeholder="Search ..." />
+                                <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-13 search" placeholder="{{ __('provider.Search ...') }}" />
                             </div>
                         </div>
                         <div class="card-toolbar">
                             <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                                <button type="button" class="btn btn-primary" onclick="openModalBox('modal_large','{{ route('provider.create') }}','Add Provider')">
-                                    <i class="ki-outline ki-plus fs-2"></i>Add Provider</button>
+                                <button type="button" class="btn btn-primary" onclick="openModalBox('modal_large','{{ route('provider.create') }}','{{ __('provider.Add Provider') }}')">
+                                    <i class="ki-outline ki-plus fs-2"></i>{{ __('provider.Add Provider') }}</button>
                             </div>
                         </div>
                     </div>
@@ -44,10 +44,10 @@
                         <table class="table align-middle table-row-dashed fs-6 gy-5 kt_datatable_example_1" id="kt_datatable_example_1">
                             <thead>
                                 <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0 no-wrap">
-                                    <th>Full Name</th>
-                                    <th>Email & Phone</th>
-                                    <th>Type of Service</th>
-                                    <th>Creation date</th>
+                                    <th>{{ __('provider.Full Name') }}</th>
+                                    <th>{{ __('provider.Email & Phone') }}</th>
+                                    <th>{{ __('provider.Type of Service') }}</th>
+                                    <th>{{ __('provider.Creation date') }}</th>
                                     @if($userType)
                                     <th class="text-end min-w-100px"></th>
                                     @endif
@@ -81,13 +81,13 @@
                                     <td>{{ $item->created_at }}</td>
                                     @if($userType)
                                     <td class="text-end nowrap">
-                                        <button class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-primary" onclick="openModalBox('modal_large','{{ route('provider.edit',$item->id) }}','Edit Provider')">
-                                            <i class="ki-duotone ki-pencil fs-1" data-bs-toggle="tooltip" title="Edit">
+                                        <button class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-primary" onclick="openModalBox('modal_large','{{ route('provider.edit',$item->id) }}','{{ __('provider.Edit Provider') }}')">
+                                            <i class="ki-duotone ki-pencil fs-1" data-bs-toggle="tooltip" title="{{ __('provider.Edit Provider') }}">
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>
                                             </i>
                                         </button>
-                                        <button type="button" class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-danger " onclick="deleteSweerAlert('This provider has been deleted.','{{ route('provider.destroy',$item->id) }}','{{route('provider.index')}}')" data-bs-toggle="tooltip" title="Delete" data-bs-placement="top">
+                                        <button type="button" class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-danger " onclick="deleteSweerAlert('{{ __('provider.This provider has been deleted') }}.','{{ route('provider.destroy',$item->id) }}','{{route('provider.index')}}')" data-bs-toggle="tooltip" title="{{ __('provider.Delete') }}" data-bs-placement="top">
                                             <span class="svg-icon svg-icon-2">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                     <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor"></path>

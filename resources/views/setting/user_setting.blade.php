@@ -10,13 +10,13 @@
                 <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                     <!--begin::Title-->
                     <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
-                        Account Settings</h1>
+                        {{ __('admin.Account Settings') }}</h1>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                         <!--begin::Item-->
                         <li class="breadcrumb-item text-muted">
-                            <a href="dashboard" class="text-muted text-hover-primary">Home</a>
+                            <a href="dashboard" class="text-muted text-hover-primary">{{ __('admin.Home') }}</a>
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
@@ -25,7 +25,7 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Account</li>
+                        <li class="breadcrumb-item text-muted">{{ __('admin.Account') }}</li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -47,7 +47,7 @@
                         aria-controls="kt_account_profile_details">
                         <!--begin::Card title-->
                         <div class="card-title m-0">
-                            <h3 class="fw-bold m-0">Profile Details</h3>
+                            <h3 class="fw-bold m-0">{{ __('admin.Profile Details') }}</h3>
                         </div>
                         <!--end::Card title-->
                     </div>
@@ -60,7 +60,7 @@
                             <!--begin::Card body-->
                             <div class="card-body border-top p-9">
                                 <div class="row mb-6">
-                                    <label class="col-lg-4 col-form-label fw-semibold fs-6">Avatar</label>
+                                    <label class="col-lg-4 col-form-label fw-semibold fs-6">{{ __('admin.Avatar') }}</label>
                                     <div class="col-lg-8">
                                         <div class="image-input image-input-outline" data-kt-image-input="true"
                                             style="background-image: url('{{ asset($data['profile_picture'])}}')">
@@ -69,7 +69,7 @@
                                             <label
                                                 class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
                                                 data-kt-image-input-action="change" data-bs-toggle="tooltip"
-                                                title="Change avatar">
+                                                title="{{ __('admin.Change avatar') }}">
                                                 <i class="bi bi-pencil-fill fs-7"></i>
                                                 <input type="file" name="profile_picture" accept=".png, .jpg, .jpeg" />
                                                 <input type="hidden" name="avatar_remove" />
@@ -77,51 +77,51 @@
                                             <span
                                                 class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
                                                 data-kt-image-input-action="cancel" data-bs-toggle="tooltip"
-                                                title="Cancel avatar">
+                                                title="{{ __('admin.Cancel avatar') }}">
                                                 <i class="bi bi-x fs-2"></i>
                                             </span>
                                             <span
                                                 class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
                                                 data-kt-image-input-action="remove" data-bs-toggle="tooltip"
-                                                title="Remove avatar">
+                                                title="{{ __('admin.Remove avatar') }}">
                                                 <i class="bi bi-x fs-2"></i>
                                             </span>
                                         </div>
-                                        <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                        <div class="form-text">{{ __('admin.Allowed file types: png, jpg, jpeg') }}.</div>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">Full Name</label>
+                                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">{{ __('admin.Full Name') }}</label>
                                     <div class="col-lg-8">
                                         <div class="row">
                                             <div class="col-lg-12 fv-row">
                                                 <input type="text" name="name"
                                                     class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                    placeholder="Please enter the Full Name" value="{{$data['name']}}" />
+                                                    placeholder="{{ __('admin.Please enter the Full Name') }}" value="{{$data['name']}}" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-4 col-form-label fw-semibold fs-6">
-                                        <span class="required">Phone</span>
+                                        <span class="required">{{ __('admin.Phone') }}</span>
                                         <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
-                                            title="Phone number must be active"></i>
+                                            title="{{ __('admin.Phone number must be active') }}"></i>
                                     </label>
                                     <div class="col-lg-8 fv-row">
                                         <input type="tel" name="phone_number"
                                             class="form-control form-control-lg form-control-solid kt_inputmask_2"
-                                            placeholder="Please enter the Phone Number" value="{{$data['phone_number']}}" />
+                                            placeholder="{{ __('admin.Please enter the Phone Number') }}" value="{{$data['phone_number']}}" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-4 col-form-label fw-semibold fs-6">
-                                        <span class="">Address</span>
+                                        <span class="">{{ __('admin.Address') }}</span>
                                     </label>
                                     <div class="col-lg-8 fv-row">
                                         <input type="text" name="address"
                                             class="form-control form-control-lg form-control-solid"
-                                            placeholder="Please enter the Address" value="{{$data['address']}}" />
+                                            placeholder="{{ __('admin.Please enter the Address') }}" value="{{$data['address']}}" />
                                     </div>
                                 </div>
                             </div>
@@ -129,9 +129,9 @@
                             <!--begin::Actions-->
                             <div class="card-footer d-flex justify-content-end py-6 px-9">
                                 <button type="reset"
-                                    class="btn btn-light btn-active-light-primary me-2">Discard</button>
+                                    class="btn btn-light btn-active-light-primary me-2">{{ __('admin.Discard') }}</button>
                                 <button type="submit" class="btn btn-primary"
-                                    >Save Changes</button>
+                                    >{{ __('admin.Save Changes') }}</button>
                             </div>
                             <!--end::Actions-->
                         </form>
@@ -146,7 +146,7 @@
                     <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse"
                         data-bs-target="#kt_account_signin_method">
                         <div class="card-title m-0">
-                            <h3 class="fw-bold m-0">Sign-in Method</h3>
+                            <h3 class="fw-bold m-0">{{ __('admin.Sign-in Method') }}</h3>
                         </div>
                     </div>
                     <!--end::Card header-->
@@ -158,7 +158,7 @@
                             <div class="d-flex flex-wrap align-items-center">
                                 <!--begin::Label-->
                                 <div id="kt_signin_email">
-                                    <div class="fs-6 fw-bold mb-1">Email Address</div>
+                                    <div class="fs-6 fw-bold mb-1">{{ __('admin.Email Address') }}</div>
                                     <div class="fw-semibold text-gray-600">{{ $data['email'] }}</div>
                                 </div>
                                 <!--end::Label-->
@@ -171,11 +171,10 @@
                                             <div class="col-lg-6 mb-4 mb-lg-0">
                                                 <div class="fv-row mb-0">
                                                     <label for="emailaddress"
-                                                        class="form-label fs-6 fw-bold mb-3">Enter New Email
-                                                        Address</label>
+                                                        class="form-label fs-6 fw-bold mb-3">{{ __('admin.Enter New Email Address') }}</label>
                                                     <input type="email"
                                                         class="form-control form-control-lg form-control-solid"
-                                                        id="emailaddress" placeholder="Email Address"
+                                                        id="emailaddress" placeholder="{{ __('admin.Email Address') }}"
                                                         name="email" value="{{ $data['email'] }}" />
                                                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                                 </div>
@@ -183,7 +182,7 @@
                                             <div class="col-lg-6">
                                                 <div class="fv-row mb-0">
                                                     <label for="confirmemailpassword"
-                                                        class="form-label fs-6 fw-bold mb-3">Confirm Password</label>
+                                                        class="form-label fs-6 fw-bold mb-3">{{ __('admin.Confirm Password') }}</label>
                                                     <input type="password"
                                                         class="form-control form-control-lg form-control-solid"
                                                         name="confirmemailpassword" id="confirmemailpassword" />
@@ -193,9 +192,9 @@
                                         </div>
                                         <div class="d-flex">
                                             <button id="kt_signin_submit" type="submit"
-                                                class="btn btn-primary me-2 px-6">Update Email</button>
+                                                class="btn btn-primary me-2 px-6">{{ __('admin.Update Email') }}</button>
                                             <button id="kt_signin_cancel" type="button"
-                                                class="btn btn-color-gray-400 btn-active-light-primary px-6">Cancel</button>
+                                                class="btn btn-color-gray-400 btn-active-light-primary px-6">{{ __('admin.Cancel') }}</button>
                                         </div>
                                     </form>
                                     <!--end::Form-->
@@ -203,7 +202,7 @@
                                 <!--end::Edit-->
                                 <!--begin::Action-->
                                 <div id="kt_signin_email_button" class="ms-auto">
-                                    <button class="btn btn-light btn-active-light-primary">Change Email</button>
+                                    <button class="btn btn-light btn-active-light-primary">{{ __('admin.Change Email') }}</button>
                                 </div>
                                 <!--end::Action-->
                             </div>
@@ -215,7 +214,7 @@
                             <div class="d-flex flex-wrap align-items-center mb-10">
                                 <!--begin::Label-->
                                 <div id="kt_signin_password">
-                                    <div class="fs-6 fw-bold mb-1">Password</div>
+                                    <div class="fs-6 fw-bold mb-1">{{ __('admin.Password') }}</div>
                                     <div class="fw-semibold text-gray-600">************</div>
                                 </div>
                                 <!--end::Label-->
@@ -228,7 +227,7 @@
                                             <div class="col-lg-4">
                                                 <div class="fv-row mb-0">
                                                     <label for="old_password"
-                                                        class="form-label fs-6 fw-bold mb-3">Current Password</label>
+                                                        class="form-label fs-6 fw-bold mb-3">{{ __('admin.Current Password') }}</label>
                                                     <input type="password"
                                                         class="form-control form-control-lg form-control-solid"
                                                         name="old_password" id="old_password" />
@@ -238,8 +237,7 @@
                                             </div>
                                             <div class="col-lg-4">
                                                 <div class="fv-row mb-0">
-                                                    <label for="password" class="form-label fs-6 fw-bold mb-3">New
-                                                        Password</label>
+                                                    <label for="password" class="form-label fs-6 fw-bold mb-3">{{ __('admin.New Password') }}</label>
                                                     <input type="password"
                                                         class="form-control form-control-lg form-control-solid"
                                                         name="password" id="password" />
@@ -250,8 +248,7 @@
                                             <div class="col-lg-4">
                                                 <div class="fv-row mb-0">
                                                     <label for="password_confirmation"
-                                                        class="form-label fs-6 fw-bold mb-3">Confirm New
-                                                        Password</label>
+                                                        class="form-label fs-6 fw-bold mb-3">{{ __('admin.Confirm New Password') }}</label>
                                                     <input type="password"
                                                         class="form-control form-control-lg form-control-solid"
                                                         name="password_confirmation" id="password_confirmation" />
@@ -260,13 +257,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-text mb-5">Password must be at least 8 character and contain
-                                            symbols</div>
+                                        <div class="form-text mb-5">{{ __('admin.Password must be at least 8 character and contain symbols') }}</div>
                                         <div class="d-flex">
                                             <button id="kt_password_submit" type="submit"
-                                                class="btn btn-primary me-2 px-6">Update Password</button>
+                                                class="btn btn-primary me-2 px-6">{{ __('admin.Update Password') }}</button>
                                             <button id="kt_password_cancel" type="button"
-                                                class="btn btn-color-gray-400 btn-active-light-primary px-6">Cancel</button>
+                                                class="btn btn-color-gray-400 btn-active-light-primary px-6">{{ __('admin.Cancel') }}</button>
                                         </div>
                                     </form>
                                     <!--end::Form-->
@@ -274,7 +270,7 @@
                                 <!--end::Edit-->
                                 <!--begin::Action-->
                                 <div id="kt_signin_password_button" class="ms-auto">
-                                    <button class="btn btn-light btn-active-light-primary">Reset Password</button>
+                                    <button class="btn btn-light btn-active-light-primary">{{ __('admin.Reset Password') }}</button>
                                 </div>
                                 <!--end::Action-->
                             </div>

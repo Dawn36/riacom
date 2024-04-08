@@ -5,7 +5,7 @@
         data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
         data-kt-scroll-dependencies="#modal_large_header" data-kt-scroll-wrappers="#modal_large"
         data-kt-scroll-offset="200px">
-        <label class="fs-6 fw-bold mb-4">Picture</label>
+        <label class="fs-6 fw-bold mb-4">{{ __('client.Picture') }}</label>
         <div class="fv-row mb-5">
             <div class="image-input image-input-outline image-input-empty" data-kt-image-input="true"
                 style="background-image: url({{ asset($client->image) }})">
@@ -13,78 +13,77 @@
                 <div class="image-input-wrapper w-125px h-125px"
                     style="background-image: url({{ asset($client->image) }})"></div>
                 <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
-                    data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                    data-kt-image-input-action="change" data-bs-toggle="tooltip" title="{{ __('client.Change avatar') }}">
                     <i class="ki-outline ki-pencil fs-5"></i>
                     <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
                     <input type="hidden" name="avatar_remove" />
                 </label>
                 <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
-                    data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                    data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="{{ __('client.Cancel avatar') }}">
                     <i class="ki-outline ki-cross fs-2"></i>
                 </span>
                 <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
-                    data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                    data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="{{ __('client.Remove avatar') }}">
                     <i class="ki-outline ki-cross fs-2"></i>
                 </span>
             </div>
         </div>
         <div class="row g-5">
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">Full Name</label>
+                <label class="required fs-6 fw-bold mb-2">{{ __('client.Full Name') }}</label>
                 <input type="text" class="form-control form-control-solid" value="{{ $client->name }}"
-                    placeholder="Enter Full Name" name="name" />
+                    placeholder="{{ __('client.Enter Full Name') }}" name="name" />
             </div>
             <div class="col-12 col-md-6">
-                <label class="fs-6 fw-bold mb-2">Job Title</label>
+                <label class="fs-6 fw-bold mb-2">{{ __('client.Job Title') }}</label>
                 <input type="text" class="form-control form-control-solid" value="{{ $client->job_title }}"
-                    placeholder="Enter Job Title" name="job_title" />
+                    placeholder="{{ __('client.Enter Job Title') }}" name="job_title" />
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">Email</label>
+                <label class="required fs-6 fw-bold mb-2">{{ __('client.Email') }}</label>
                 <input type="eamil" class="required form-control form-control-solid" value="{{ $client->email }}"
-                    placeholder="Enter Email" name="email" />
+                    placeholder="{{ __('client.Enter Email') }}" name="email" />
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">Phone</label>
-                <input type="tel" class="form-control form-control-solid" placeholder="Enter Phone" name="phone"
+                <label class="required fs-6 fw-bold mb-2">{{ __('client.Phone') }}</label>
+                <input type="tel" class="form-control form-control-solid" placeholder="{{ __('client.Enter Phone') }}" name="phone"
                     value="{{ $client->phone }}" />
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">VAT number</label>
-                <input type="tel" class="form-control form-control-solid" placeholder="Enter VAT number"
+                <label class="required fs-6 fw-bold mb-2">{{ __('client.VAT number') }}</label>
+                <input type="tel" class="form-control form-control-solid" placeholder="{{ __('client.Enter VAT number') }}"
                     name="vat_number" value="{{ $client->vat_number }}" />
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">Contact person name</label>
-                <input type="text" class="form-control form-control-solid" placeholder="Enter Contact person name"
+                <label class="required fs-6 fw-bold mb-2">{{ __('client.Contact person name') }}</label>
+                <input type="text" class="form-control form-control-solid" placeholder="{{ __('client.Enter Contact person name') }}"
                     name="contact_person_name" value="{{ $client->contact_person_name }}" />
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">ID document photo or pdf attachment</label>
+                <label class="required fs-6 fw-bold mb-2">{{ __('client.ID document photo or pdf attachment') }}</label>
                 <input type="file" class="form-control form-control-solid" name="document_or_photo" />
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">Status</label>
+                <label class="required fs-6 fw-bold mb-2">{{ __('client.Status') }}</label>
                 <select name="status" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2"
-                    data-close-on-select="true" data-placeholder="Select Status" data-allow-clear="true">
+                    data-close-on-select="true" data-placeholder="{{ __('client.Select Status') }}" data-allow-clear="true">
                     <option></option>
-                    <option value="to be contacted" {{ $client->status == 'to be contacted' ? 'selected' : '' }}>To be
-                        Contacted</option>
-                    <option value="contact" {{ $client->status == 'contact' ? 'selected' : '' }}>Contact</option>
+                    <option value="to be contacted" {{ $client->status == 'to be contacted' ? 'selected' : '' }}>{{ __('client.To be
+                        Contacted') }}</option>
+                    <option value="contact" {{ $client->status == 'contact' ? 'selected' : '' }}>{{ __('client.Contact') }}</option>
                     <option value="under negotiation" {{ $client->status == 'under negotiation' ? 'selected' : '' }}>
-                        Under Negotiation</option>
-                    <option value="active" {{ $client->status == 'active' ? 'selected' : '' }}>Active</option>
-                    <option value="inactive" {{ $client->status == 'inactive' ? 'selected' : '' }}>Inactive</option>
-                    <option value="pending" {{ $client->status == 'pending' ? 'selected' : '' }}>Pending</option>
-                    <option value="not interested" {{ $client->status == 'not interested' ? 'selected' : '' }}>Not
-                        Interested</option>
-                    <option value="rejected" {{ $client->status == 'rejected' ? 'selected' : '' }}>Rejected</option>
+                        {{ __('client.Under Negotiation') }}</option>
+                    <option value="active" {{ $client->status == 'active' ? 'selected' : '' }}>{{ __('client.Active') }}</option>
+                    <option value="inactive" {{ $client->status == 'inactive' ? 'selected' : '' }}>{{ __('client.Inactive') }}</option>
+                    <option value="pending" {{ $client->status == 'pending' ? 'selected' : '' }}>{{ __('client.Pending') }}</option>
+                    <option value="not interested" {{ $client->status == 'not interested' ? 'selected' : '' }}>{{ __('client.Not Interested') }}</option>
+                    <option value="rejected" {{ $client->status == 'rejected' ? 'selected' : '' }}>{{ __('client.Rejected') }}</option>
                 </select>
             </div>
             <div class="col-12 col-md-6">
-                <label class="required fs-6 fw-bold mb-2">User</label>
+                <label class="required fs-6 fw-bold mb-2">{{ __('client.User') }}</label>
                 <select name="user[]" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
-                    data-control="select2" data-close-on-select="true" data-placeholder="Select User"
+                    data-control="select2" data-close-on-select="true" data-placeholder="{{ __('client.Select User') }}"
                     data-allow-clear="true" multiple>
                     <option></option>
                     @foreach ($user as $item)
@@ -107,28 +106,28 @@
                             <div class="separator my-2"></div>
                         </div>
                         <div class="col-6">
-                            <label class="required fs-6 fw-bold mb-2">CPE (electricity number)</label>
+                            <label class="required fs-6 fw-bold mb-2">{{ __('client.CPE (electricity number)') }}</label>
                             <input type="text" class="form-control form-control-solid"
-                                placeholder="Enter CPE (electricity number)" name="cpe[]" value="{{ @$cpe[0] }}" />
+                                placeholder="{{ __('client.Enter CPE (electricity number)') }}" name="cpe[]" value="{{ @$cpe[0] }}" />
                         </div>
                         <div class="col-6">
-                            <label class="required fs-6 fw-bold mb-2">CUI (gas number)</label>
+                            <label class="required fs-6 fw-bold mb-2">{{ __('client.CUI (gas number)') }}</label>
                             <input type="text" class="form-control form-control-solid"
-                                placeholder="Enter CUI (gas number)" name="cui[]" value="{{ @$cui[0] }}" />
+                                placeholder="{{ __('client.Enter CUI (gas number)') }}" name="cui[]" value="{{ @$cui[0] }}" />
                         </div>
                         <div class="col-6">
-                            <label class="required fs-6 fw-bold mb-2">Electricity consumption</label>
+                            <label class="required fs-6 fw-bold mb-2">{{ __('client.Electricity consumption') }}</label>
                             <input type="text" class="form-control form-control-solid"
-                                placeholder="Enter Electricity consumption" name="electricity_consumption[]" value="{{ @$electricityConsumption[0] }}" />
+                                placeholder="{{ __('client.Enter Electricity consumption') }}" name="electricity_consumption[]" value="{{ @$electricityConsumption[0] }}" />
                         </div>
                         <div class="col-6">
-                            <label class="required fs-6 fw-bold mb-2">Gas consumption</label>
+                            <label class="required fs-6 fw-bold mb-2">{{ __('client.Gas consumption') }}</label>
                             <input type="text" class="form-control form-control-solid"
-                                placeholder="Enter Gas consumption" name="gas_consumption[]" value="{{ @$gasConsumption[0] }}" />
+                                placeholder="{{ __('client.Enter Gas consumption') }}" name="gas_consumption[]" value="{{ @$gasConsumption[0] }}" />
                         </div>
                         <div class="col-11">
-                            <label class="required fs-6 fw-bold mb-2">Address</label>
-                            <input type="text" class="form-control form-control-solid" value="{{ @$address[0] }}" placeholder="Enter Address"
+                            <label class="required fs-6 fw-bold mb-2">{{ __('client.Address') }}</label>
+                            <input type="text" class="form-control form-control-solid" value="{{ @$address[0] }}" placeholder="{{ __('client.Enter Address') }}"
                                 name="address[]" />
                         </div>
                         <div class="col-1">
@@ -146,28 +145,28 @@
                             <div class="separator my-2"></div>
                         </div>
                         <div class="col-6">
-                            <label class="required fs-6 fw-bold mb-2">CPE (electricity number)</label>
+                            <label class="required fs-6 fw-bold mb-2">{{ __('client.CPE (electricity number)') }}</label>
                             <input type="text" class="form-control form-control-solid"
-                                placeholder="Enter CPE (electricity number)" name="cpe[]" value="{{ @$cpe[$i] }}" />
+                                placeholder="{{ __('client.Enter CPE (electricity number)') }}" name="cpe[]" value="{{ @$cpe[$i] }}" />
                         </div>
                         <div class="col-6">
-                            <label class="required fs-6 fw-bold mb-2">CUI (gas number)</label>
+                            <label class="required fs-6 fw-bold mb-2">{{ __('client.CUI (gas number)') }}</label>
                             <input type="text" class="form-control form-control-solid"
-                                placeholder="Enter CUI (gas number)" name="cui[]" value="{{ @$cui[$i] }}" />
+                                placeholder="{{ __('client.Enter CUI (gas number)') }}" name="cui[]" value="{{ @$cui[$i] }}" />
                         </div>
                         <div class="col-6">
-                            <label class="required fs-6 fw-bold mb-2">Electricity consumption</label>
+                            <label class="required fs-6 fw-bold mb-2">{{ __('client.Electricity consumption') }}</label>
                             <input type="text" class="form-control form-control-solid"
-                                placeholder="Enter Electricity consumption" name="electricity_consumption[]" value="{{ @$electricityConsumption[$i] }}" />
+                                placeholder="{{ __('client.Enter Electricity consumption') }}" name="electricity_consumption[]" value="{{ @$electricityConsumption[$i] }}" />
                         </div>
                         <div class="col-6">
-                            <label class="required fs-6 fw-bold mb-2">Gas consumption</label>
+                            <label class="required fs-6 fw-bold mb-2">{{ __('client.Gas consumption') }}</label>
                             <input type="text" class="form-control form-control-solid"
-                                placeholder="Enter Gas consumption" name="gas_consumption[]" value="{{ @$gasConsumption[$i] }}" />
+                                placeholder="{{ __('client.Enter Gas consumption') }}" name="gas_consumption[]" value="{{ @$gasConsumption[$i] }}" />
                         </div>
                         <div class="col-11">
-                            <label class="required fs-6 fw-bold mb-2">Address</label>
-                            <input type="text" class="form-control form-control-solid" value="{{ @$address[$i] }}" placeholder="Enter Address"
+                            <label class="required fs-6 fw-bold mb-2">{{ __('client.Address') }}</label>
+                            <input type="text" class="form-control form-control-solid" value="{{ @$address[$i] }}" placeholder="{{ __('client.Enter Address') }}"
                                 name="address[]" />
                         </div>
                         <div class="col-1">
@@ -185,18 +184,18 @@
                 <div class="form-group mt-5">
                     <button type="button" id="addButton" class="btn btn-light-primary">
                         <i class="ki-duotone ki-plus fs-3"></i>
-                        Add
+                        {{ __('client.Add') }}
                     </button>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal-footer flex-center">
-        <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</button>
+        <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">{{ __('client.Cancel') }}</button>
         <button id="submitbutton" type="button" onclick="addUpdateData('add_form','modal_large','yes')"
             class="btn btn-lg btn-primary">
-            <label class="indicator-label">Submit</label>
-            <label class="indicator-progress">Please wait...
+            <label class="indicator-label">{{ __('client.Submit') }}</label>
+            <label class="indicator-progress">{{ __('client.Please wait...') }}
                 <label class="spinner-border spinner-border-sm align-middle ms-2"></label></label>
         </button>
     </div>

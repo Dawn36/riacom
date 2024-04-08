@@ -5,21 +5,21 @@
                 <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
                     <div class="page-title d-flex flex-column justify-content-center gap-1 me-3">
                         <h1 class="page-heading d-flex flex-column justify-content-center text-gray-900 fw-bold fs-3 m-0">
-                            Dashboard
+                            {{ __('dashboard.Dashboard') }}
                         </h1>
                         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
                             <li class="breadcrumb-item text-muted">
-                                <a class="text-muted">Home</a>
+                                <a class="text-muted">{{ __('dashboard.Home') }}</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="d-flex align-items-center gap-2 gap-lg-3">
                     <button type="button" class="btn btn-light-primary me-3 d-flex" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                        <i class="ki-outline ki-filter fs-2"></i>Filter</button>
+                        <i class="ki-outline ki-filter fs-2"></i>{{ __('dashboard.Filter') }}</button>
                     <div class="menu menu-sub menu-sub-dropdown w-300px w-md-325px" data-kt-menu="true">
                         <div class="px-7 py-5">
-                            <div class="fs-5 text-dark fw-bold">Filter Options</div>
+                            <div class="fs-5 text-dark fw-bold">{{ __('dashboard.Filter Options') }}</div>
                         </div>
                         <div class="separator border-gray-200"></div>
                         <form method="GET" action="{{ route('dashboard') }}">
@@ -27,16 +27,16 @@
                                 <div class="mb-10">
                                     <div class="row gap-3">
                                         <div class="col-12">
-                                            <label class="fs-6 fw-bold mb-2">Start Date</label>
+                                            <label class="fs-6 fw-bold mb-2">{{ __('dashboard.Start Date') }}</label>
                                             <input class="form-control form-control-solid kt_datepicker_2"
                                                 value="{{ request()->start_date }}"
-                                                placeholder="Enter Start Date" name="start_date" />
+                                                placeholder="{{ __('dashboard.Enter Start Date') }}" name="start_date" />
                                         </div>
                                         <div class="col-12">
-                                            <label class="fs-6 fw-bold mb-2">End Date</label>
+                                            <label class="fs-6 fw-bold mb-2">{{ __('dashboard.End Date') }}</label>
                                             <input class="form-control form-control-solid kt_datepicker_2"
                                                 value="{{ request()->end_date }}"
-                                                placeholder="Enter End Date" name="end_date" />
+                                                placeholder="{{ __('dashboard.Enter End Date') }}" name="end_date" />
                                         </div>
                                     </div>
                                 </div>
@@ -44,10 +44,10 @@
                                     <a href="{{ route('dashboard') }}"
                                         class="btn btn-light btn-active-light-primary fw-semibold me-2 px-6"
                                         data-kt-menu-dismiss="true"
-                                        data-kt-user-table-filter="reset">Reset</a>
+                                        data-kt-user-table-filter="reset">{{ __('dashboard.Reset') }}</a>
                                     <button type="submit" class="btn btn-primary fw-semibold px-6"
                                         data-kt-menu-dismiss="true"
-                                        data-kt-user-table-filter="filter">Apply</button>
+                                        data-kt-user-table-filter="filter">{{ __('dashboard.Apply') }}</button>
                                 </div>
                             </div>
                         </form>
@@ -67,7 +67,7 @@
                             <div class="card-body">
                                 <i class="ki-outline ki-document text-primary fs-2x ms-n1"></i>
                                 <div class="text-gray-900 fw-bold fs-2 mb-2 mt-5">{{ number_format($contractCount) }}</div>
-                                <div class="fw-semibold text-gray-600">Number of contracts</div>
+                                <div class="fw-semibold text-gray-600">{{ __('dashboard.Number of contracts') }}</div>
                             </div>
                         </a>
                     </div>
@@ -76,7 +76,7 @@
                             <div class="card-body">
                                 <i class="ki-outline ki-user-tick text-primary fs-2x ms-n1"></i>
                                 <div class="text-gray-900 fw-bold fs-2 mb-2 mt-5">{{ number_format($clientCount) }}</div>
-                                <div class="fw-semibold text-gray-600">Number of clients</div>
+                                <div class="fw-semibold text-gray-600">{{ __('dashboard.Number of clients') }}</div>
                             </div>
                         </a>
                     </div>
@@ -85,7 +85,7 @@
                             <div class="card-body">
                                 <i class="ki-outline ki-questionnaire-tablet text-primary fs-2x ms-n1"></i>
                                 <div class="text-gray-900 fw-bold fs-2 mb-2 mt-5">€{{ number_format($totalMonthlyFee) }}</div>
-                                <div class="fw-semibold text-gray-600">Active Contracts monthly fee (EUR €)</div>
+                                <div class="fw-semibold text-gray-600">{{ __('dashboard.Active Contracts monthly fee (EUR €)') }}</div>
                             </div>
                         </a>
                     </div>
@@ -94,7 +94,7 @@
                             <div class="card-body">
                                 <i class="ki-outline ki-data text-primary fs-2x ms-n1"></i>
                                 <div class="text-gray-900 fw-bold fs-2 mb-2 mt-5">{{ number_format($leadCount) }}</div>
-                                <div class="fw-semibold text-gray-600">Number of leads</div>
+                                <div class="fw-semibold text-gray-600">{{ __('dashboard.Number of leads') }}</div>
                             </div>
                         </a>
                     </div>

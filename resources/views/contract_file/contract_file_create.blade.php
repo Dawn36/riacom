@@ -4,16 +4,16 @@
     <div class="py-10 px-7 px-lg-10">
         <div class="row g-5">
             <div class="col-12">
-                <label class="required fs-6 fw-bold mb-2">Attach File</label>
+                <label class="required fs-6 fw-bold mb-2">{{ __('contract.Attach File') }}</label>
                 <input type="file" name="file" class="form-control form-control-solid">
             </div>
         </div>
     </div>
     <div class="modal-footer flex-center">
-        <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</button>
+        <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">{{ __('contract.Cancel') }}</button>
         <button id="submitbutton" type="button" onclick="addUpdateData('add_form','modal_large','yes')" class="btn btn-lg btn-primary">
-            <label class="indicator-label">Submit</label>
-            <label class="indicator-progress">Please wait...
+            <label class="indicator-label">{{ __('contract.Submit') }}</label>
+            <label class="indicator-progress">{{ __('contract.Please wait...') }}
                 <label class="spinner-border spinner-border-sm align-middle ms-2"></label></label>
         </button>
     </div>

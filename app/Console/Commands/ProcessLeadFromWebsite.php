@@ -33,6 +33,7 @@ class ProcessLeadFromWebsite extends Command
         MAX(CASE WHEN sv.key = 'name' THEN sv.value END) AS name,
         MAX(CASE WHEN sv.key = 'email' THEN sv.value END) AS email,
         MAX(CASE WHEN sv.key = 'message' THEN sv.value END) AS message
+        MAX(CASE WHEN sv.key = 'district' THEN sv.value END) AS district
     FROM
         wp_e_submissions s
     INNER JOIN
@@ -50,6 +51,7 @@ class ProcessLeadFromWebsite extends Command
                 'email' => $lead[$i]->email,
                 'message' => $lead[$i]->message,
                 'type_of_service' => $lead[$i]->services,
+                'district' => $lead[$i]->district,
             ]);
         }
         $this->info('Processing leads from website...');

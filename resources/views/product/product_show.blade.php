@@ -6,16 +6,16 @@
                 <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
                     <div class="page-title d-flex flex-column justify-content-center gap-1 me-3">
                         <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bold fs-3 m-0">
-                            View Product Details</h1>
+                            {{ __('provider.View Product Details') }}</h1>
                         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
                             <li class="breadcrumb-item text-muted">
-                                <a href="{{ route('dashboard') }}" class="text-muted text-hover-primary">Home</a>
+                                <a href="{{ route('dashboard') }}" class="text-muted text-hover-primary">{{ __('provider.Home') }}</a>
                             </li>
                             <li class="breadcrumb-item">
                                 <span class="bullet bg-gray-400 w-5px h-2px"></span>
                             </li>
                             <li class="breadcrumb-item text-muted">
-                                <a class="text-muted">Product</a>
+                                <a class="text-muted">{{ __('provider.Product') }}</a>
                             </li>
                         </ul>
                     </div>
@@ -29,16 +29,16 @@
                 <div class="card mb-5 mb-xl-10">
                     <div class="card-header border-0">
                         <div class="card-title flex-column">
-                            <h2 class="mb-1">Campaigns</h2>
-                            <div class="fs-6 fw-semibold text-muted">Total {{ count($productDocumentCampaign) }} Campaign(s)</div>
+                            <h2 class="mb-1">{{ __('provider.Campaigns') }}</h2>
+                            <div class="fs-6 fw-semibold text-muted">{{ __('provider.Total') }} {{ count($productDocumentCampaign) }}{{ __('provider.Campaign(s)') }}</div>
                         </div>
                         @php 
                             $data = ['type' => 'Campaign','product_id' => $product->id];
                             $data = json_encode($data);
                         @endphp
                         <div class="card-toolbar">
-                            <button type="button" class="btn btn-sm btn-flex btn-light-primary" onclick="openModalBox('modal_large','{{ route('product-doc.create') }}','Add Campaign',{{ $data }})">
-                                <i class="ki-outline ki-fasten fs-3"></i>Add Campaigns</button>
+                            <button type="button" class="btn btn-sm btn-flex btn-light-primary" onclick="openModalBox('modal_large','{{ route('product-doc.create') }}','{{ __('provider.Add Campaign') }}',{{ $data }})">
+                                <i class="ki-outline ki-fasten fs-3"></i>{{ __('provider.Add Campaigns') }}</button>
                         </div>
                     </div>
                     <div class="card-body pt-0 pb-5">
@@ -46,8 +46,8 @@
                             <table class="table align-middle table-row-dashed fs-6 gy-3 kt_datatable_example_1">
                                 <thead>
                                     <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                        <th class="min-w-50px">Name</th>
-                                        <th class="min-w-125px">Date Added</th>
+                                        <th class="min-w-50px">{{ __('provider.Name') }}</th>
+                                        <th class="min-w-125px">{{ __('provider.Date Added') }}</th>
                                         <th class="w-125px"></th>
                                     </tr>
                                 </thead>
@@ -79,7 +79,7 @@
                                                                                 <path d="M9.89557 13.4982L7.79487 11.2651C7.26967 10.7068 6.38251 10.7068 5.85731 11.2651C5.37559 11.7772 5.37559 12.5757 5.85731 13.0878L9.74989 17.2257C10.1448 17.6455 10.8118 17.6455 11.2066 17.2257L18.1427 9.85252C18.6244 9.34044 18.6244 8.54191 18.1427 8.02984C17.6175 7.47154 16.7303 7.47154 16.2051 8.02984L11.061 13.4982C10.7451 13.834 10.2115 13.834 9.89557 13.4982Z" fill="currentColor" />
                                                                             </svg>
                                                                         </span>
-                                                                        <div class="fs-6 text-dark">Share Link Generated</div>
+                                                                        <div class="fs-6 text-dark">{{ __('provider.Share Link Generated') }}</div>
                                                                     </div>
                                                                     <input type="text" class="form-control form-control-sm" value="https://path/to/file/or/folder/" />
                                                                 </div>
@@ -99,10 +99,10 @@
                                                     </button>
                                                     <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-150px py-4" data-kt-menu="true">
                                                         <div class="menu-item px-3">
-                                                            <a href="{{asset($item->path)}}" class="menu-link px-3" download="">Download File</a>
+                                                            <a href="{{asset($item->path)}}" class="menu-link px-3" download="">{{ __('provider.Download File') }}</a>
                                                         </div>
                                                         <div class="menu-item px-3">
-                                                            <a href="#" class="menu-link text-danger px-3" data-kt-filemanager-table-filter="delete_row" onclick="deleteSweerAlert('This document has been deleted.','{{ route('product-doc.destroy',$item->id) }}','{{route('product.show',$product->id)}}')">Delete</a>
+                                                            <a href="#" class="menu-link text-danger px-3" data-kt-filemanager-table-filter="delete_row" onclick="deleteSweerAlert('{{ __('provider.This document has been deleted') }}.','{{ route('product-doc.destroy',$item->id) }}','{{route('product.show',$product->id)}}')">{{ __('provider.Delete') }}</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -118,16 +118,16 @@
                 <div class="card mb-5 mb-xl-10">
                     <div class="card-header border-0">
                         <div class="card-title flex-column">
-                            <h2 class="mb-1">Documents</h2>
-                            <div class="fs-6 fw-semibold text-muted">Total {{ count($productDocumentDocument) }}  document(s)</div>
+                            <h2 class="mb-1">{{ __('provider.Documents') }}</h2>
+                            <div class="fs-6 fw-semibold text-muted">{{ __('provider.Total') }} {{ count($productDocumentDocument) }}  {{ __('provider.document(s)') }}</div>
                         </div>
                         @php 
                             $data = ['type' => 'Document','product_id' => $product->id];
                             $data = json_encode($data);
                         @endphp
                         <div class="card-toolbar">
-                            <button type="button" class="btn btn-sm btn-flex btn-light-primary" onclick="openModalBox('modal_large','{{ route('product-doc.create') }}','Add Document',{{ $data }})">
-                                <i class="ki-outline ki-fasten fs-3"></i>Add Documents</button>
+                            <button type="button" class="btn btn-sm btn-flex btn-light-primary" onclick="openModalBox('modal_large','{{ route('product-doc.create') }}','{{ __('provider.Add Document') }}',{{ $data }})">
+                                <i class="ki-outline ki-fasten fs-3"></i>{{ __('provider.Add Documents') }}</button>
                         </div>
                     </div>
                     <div class="card-body pt-0 pb-5">
@@ -135,8 +135,8 @@
                             <table class="table align-middle table-row-dashed fs-6 gy-3 kt_datatable_example_1">
                                 <thead>
                                     <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                        <th class="min-w-50px">Name</th>
-                                        <th class="min-w-125px">Date Added</th>
+                                        <th class="min-w-50px">{{ __('provider.Name') }}</th>
+                                        <th class="min-w-125px">{{ __('provider.Date Added') }}</th>
                                         <th class="w-125px"></th>
                                     </tr>
                                 </thead>
@@ -168,7 +168,7 @@
                                                                                 <path d="M9.89557 13.4982L7.79487 11.2651C7.26967 10.7068 6.38251 10.7068 5.85731 11.2651C5.37559 11.7772 5.37559 12.5757 5.85731 13.0878L9.74989 17.2257C10.1448 17.6455 10.8118 17.6455 11.2066 17.2257L18.1427 9.85252C18.6244 9.34044 18.6244 8.54191 18.1427 8.02984C17.6175 7.47154 16.7303 7.47154 16.2051 8.02984L11.061 13.4982C10.7451 13.834 10.2115 13.834 9.89557 13.4982Z" fill="currentColor" />
                                                                             </svg>
                                                                         </span>
-                                                                        <div class="fs-6 text-dark">Share Link Generated</div>
+                                                                        <div class="fs-6 text-dark">{{ __('provider.Share Link Generated') }}</div>
                                                                     </div>
                                                                     <input type="text" class="form-control form-control-sm" value="https://path/to/file/or/folder/" />
                                                                 </div>
@@ -188,10 +188,10 @@
                                                     </button>
                                                     <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-150px py-4" data-kt-menu="true">
                                                         <div class="menu-item px-3">
-                                                            <a href="{{asset($item->path)}}" class="menu-link px-3" download="">Download File</a>
+                                                            <a href="{{asset($item->path)}}" class="menu-link px-3" download="">{{ __('provider.Download File') }}</a>
                                                         </div>
                                                         <div class="menu-item px-3">
-                                                            <a href="#" class="menu-link text-danger px-3" data-kt-filemanager-table-filter="delete_row" onclick="deleteSweerAlert('This document has been deleted.','{{ route('product-doc.destroy',$item->id) }}','{{route('product.show',$product->id)}}')">Delete</a>
+                                                            <a href="#" class="menu-link text-danger px-3" data-kt-filemanager-table-filter="delete_row" onclick="deleteSweerAlert('{{ __('provider.This document has been deleted') }}.','{{ route('product-doc.destroy',$item->id) }}','{{route('product.show',$product->id)}}')">{{ __('provider.Delete') }}</a>
                                                         </div>
                                                     </div>
                                                 </div>
