@@ -32,7 +32,7 @@ class ProcessLeadFromWebsite extends Command
         MAX(CASE WHEN sv.key = 'services' THEN sv.value END) AS services,
         MAX(CASE WHEN sv.key = 'name' THEN sv.value END) AS name,
         MAX(CASE WHEN sv.key = 'email' THEN sv.value END) AS email,
-        MAX(CASE WHEN sv.key = 'message' THEN sv.value END) AS message
+        MAX(CASE WHEN sv.key = 'message' THEN sv.value END) AS message,
         MAX(CASE WHEN sv.key = 'district' THEN sv.value END) AS district
     FROM
         wp_e_submissions s
