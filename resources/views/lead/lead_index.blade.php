@@ -71,7 +71,7 @@
                                         {{ $item->message }}
                                     </td>
                                     <td>
-                                        <div class="badge badge-light-{{ $item->status == 'lead' ? 'warning' : 'primary' }} fw-bold">{{ __('lead.'+$item->status) }}</div>
+                                        <div class="badge badge-light-{{ $item->status == 'lead' ? 'warning' : 'primary' }} fw-bold">{{ $item->status == '' ? '' : __('lead.'.ucwords($item->status)) }}</div>
                                     </td>
                                     <td>{{ $item->created_at }}</td>
                                     <td>{{ $item->user_name }}</td>

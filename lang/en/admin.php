@@ -62,5 +62,6 @@ return [
     'Update Password' => 'Update Password',
     'Cancel' => 'Cancel',
     'Reset Password' => 'Reset Password',
+    'Edit' => 'Edit',
 ];
 

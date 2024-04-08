@@ -21,6 +21,7 @@ return [
     'Status' => 'Estado',
     'Select Status' => 'Selecionar Estado',
     'To be Contacted' => 'Por contactar',
+    'To Be Contacted' => 'Por contactar',
     'Contact' => 'Contactado',
     'Under Negotiation' => 'Em negociação',
     'Active' => 'Ativo',
@@ -94,5 +95,7 @@ return [
     'This file has been deleted' => 'Este ficheiro foi eliminado',
     'Attach File' => 'Anexar Ficheiro',
     'Note' => 'Nota',
+    'View' => 'Ver',
+    'Edit' => 'Editar',
     'Enter Notes here ...' => 'Escrever notas aqui ...',
 ];

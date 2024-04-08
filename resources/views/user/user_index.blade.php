@@ -79,7 +79,7 @@
                                     <td>{{ $item->created_at }}</td>
                                     <td class="text-end nowrap">
                                         <button class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-primary" onclick="openModalBox('modal_large','{{ route('user.edit',$item->id) }}','{{ __('admin.Edit User') }}')">
-                                            <i class="ki-duotone ki-pencil fs-1" data-bs-toggle="tooltip" title="Edit">
+                                            <i class="ki-duotone ki-pencil fs-1" data-bs-toggle="tooltip" title="{{ __('admin.Edit') }}">
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>
                                             </i>

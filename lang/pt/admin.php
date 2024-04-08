@@ -62,5 +62,7 @@ return [
     'Update Password' => 'Atualizar Palavra-passe',
     'Cancel' => 'Cancelar',
     'Reset Password' => 'Redefinir Palavra-passe',
+    'Edit' => 'Editar',
+
 ];
 

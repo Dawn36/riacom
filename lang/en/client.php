@@ -21,6 +21,7 @@ return [
     'Status' => 'Status',
     'Select Status' => 'Select Status',
     'To be Contacted' => 'To be Contacted',
+    'To Be Contacted' => 'To Be Contacted',
     'Contact' => 'Contact',
     'Under Negotiation' => 'Under Negotiation',
     'Active' => 'Active',
@@ -94,5 +95,7 @@ return [
     'This file has been deleted' => 'This file has been deleted',
     'Attach File' => 'Attach File',
     'Note' => 'Note',
+    'View' => 'View',
+    'Edit' => 'Edit',
     'Enter Notes here ...' => 'Enter Notes here ...',
 ];

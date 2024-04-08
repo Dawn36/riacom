@@ -125,7 +125,7 @@
                                         <td>
                                             <div class="badge badge-lg badge-light-{{ $item->status == 'inactive' || $item->status == 'rejected' ? 'danger' : 'primary' }} d-inline cursor-pointer"
                                                 data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                                {{ __('client.'. ucwords($item->status)) }}</div>
+                                                {{ __('client.'.ucwords($item->status)) }} </div>
                                             <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3"
                                                 data-kt-menu="true">
                                                 <div class="menu-item px-3">
@@ -198,7 +198,7 @@
                                             <a href="{{ route('client.show', $item->id) }}"
                                                 class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-primary">
                                                 <i class="ki-duotone ki-eye fs-1" data-bs-toggle="tooltip"
-                                                    title="View">
+                                                    title="{{ __('client.View') }}">
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
                                                     <span class="path3"></span>
@@ -209,7 +209,7 @@
                                                 class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-primary"
                                                 onclick="openModalBox('modal_large','{{ route('client.edit', $item->id) }}','{{ __('client.Edit Client') }}')">
                                                 <i class="ki-duotone ki-pencil fs-1" data-bs-toggle="tooltip"
-                                                    title="Edit">
+                                                    title="{{ __('client.Edit') }}">
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
                                                 </i>
@@ -299,8 +299,7 @@
                 obj.parentElement.parentElement.previousElementSibling.classList.add('badge-light-primary');
                 obj.parentElement.parentElement.previousElementSibling.classList.remove('badge-light-danger');
             }
-            obj.parentElement.parentElement.parentElement.children[0].textContent = status;
-            obj.parentElement.parentElement.parentElement.children[1].classList.remove('show');
+            
             var value = {
                 status: status,
                 contacts_id: id,
@@ -312,7 +311,8 @@
                 data: value,
 
                 success: function(result) {
-
+                    obj.parentElement.parentElement.parentElement.children[0].textContent = result;
+                    obj.parentElement.parentElement.parentElement.children[1].classList.remove('show');
                 }
             });
         }

@@ -41,7 +41,7 @@ class ClientController extends Controller
         $conatact=Client::find($request->contacts_id);
         $conatact->status=strtolower($request->status);
         $conatact->save();
-        return true;
+        return __('client.'.ucwords($request->status));
     }
     
     /**
