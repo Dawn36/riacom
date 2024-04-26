@@ -123,6 +123,7 @@ return [
     'Contract Details' => 'Contract Details',
     'Edit Contract' => 'Edit Contract',
     'months' => 'months',
+    'Months' => 'Months',
     'Documents' => 'Documents',
     'Total' => 'Total',
     'document(s)' => 'document(s)',

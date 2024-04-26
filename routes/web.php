@@ -11,6 +11,7 @@ use App\Http\Controllers\ClientNoteController;
 use App\Http\Controllers\ClientFileController;
 use App\Http\Controllers\ContractController;
 use App\Http\Controllers\ContractFileController;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,7 +36,8 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
+    
+    Route::resource('event', EventController::class);
     Route::resource('contract-file', ContractFileController::class);
     Route::resource('contract', ContractController::class);
     Route::get('get-provider-user', [ContractController::class, 'providerUser'])->name('get-provider-user');

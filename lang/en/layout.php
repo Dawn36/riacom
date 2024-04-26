@@ -14,5 +14,6 @@ return [
     'Users' => 'Users',
     'Admins' => 'Admins',
     'Account' => 'Account',
+    'Event' => 'Event',
 ];
 

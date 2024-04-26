@@ -26,6 +26,14 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="kt_modal_view_event" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <div class="modal-content" id="kt_modal_view_event_body">
+           
+        </div>
+    </div>
+</div>
 <div class="modal fade" id="modal_small"  tabindex-="1" aria-hidden="true" data-bs-focus="false">
     <div class="modal-dialog modal-dialog-centered modal-sm">
         <div class="modal-content">

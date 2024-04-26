@@ -13,6 +13,19 @@ function openModalBox(modalId, url, title, val = "") {
         }
     });
 }
+function openModalBoxCalendar(modalId, url,val = "") {
+    $.ajax({
+        type: 'GET',
+        url: url,
+        data: {
+            val: val,
+        },
+        success: function(result) {
+            $(`#${modalId}_body`).html(result);
+            $(`#${modalId}`).modal('show');
+        }
+    });
+}
 
 function addUpdateData(formId,modalId,reload) {
     $('button[id="submitbutton"]').attr('disabled', 'disabled');
