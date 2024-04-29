@@ -14,7 +14,7 @@
             <div class="col-12 col-md-6">
                 <label class="fs-6 fw-bold mb-2">{{ __('contract.Start Date') }}</label>
                 <input class="form-control form-control-solid kt_datepicker_3" placeholder="{{ __('contract.Enter Start Date') }}"
-                    name="start_date" value="{{ $contract->start_date }}" id="start_date" />
+                    name="start_date" value="{{ date('Y-m-d',strtotime($contract->start_date)) }}" id="start_date" />
             </div>
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">{{ __('contract.Duration') }}</label>
@@ -25,7 +25,7 @@
             <div class="col-12 col-md-6">
                 <label class="fs-6 fw-bold mb-2">{{ __('contract.End Date') }}</label>
                 <input readonly class="form-control form-control-solid kt_datepicker_2" placeholder="{{ __('contract.Enter End Date') }}"
-                    name="end_date" id="end_date" value="{{ $contract->end_date }}" />
+                    name="end_date" id="end_date" value="{{ date('Y-m-d',strtotime($contract->end_date)) }}" />
             </div>
             <div class="col-12 col-md-6">
                 <label class="fs-6 fw-bold mb-2">{{ __('contract.Renews in…') }}</label>
