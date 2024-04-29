@@ -25,6 +25,7 @@ return [
     'MAT' => 'MAT',
     'Power' => 'Power',
     'Select Power' => 'Select Power',
+    'Select Provider' => 'Select Provider',
     '1,15' => '1,15',
     '2,30' => '2,30',
     '3,45' => '3,45',
