@@ -99,29 +99,16 @@
                             </div>
                         </a>
                     </div>
+                    <div class="col-12 col-md-12 col-xl-12">
+                        <div id="kt_calendar_app"></div>
+                    </div>
                 </div>
                 <!--end::Row-->
-            </div>
+            </div>  
             <!--end::Content container-->
         </div>
 
-        <div id="kt_app_content" class="app-content flex-column-fluid">
-            <!--begin::Content container-->
-            <div id="kt_app_content_container" class="app-container container-fluid">
-                <!--begin::Card-->
-                <div class="card">
-                    <!--begin::Card body-->
-                    <div class="card-body">
-                        <!--begin::Calendar-->
-                        <div id="kt_calendar_app"></div>
-                        <!--end::Calendar-->
-                    </div>
-                    <!--end::Card body-->
-                </div>
-                <!--end::Card-->
-            </div>
-            <!--end::Content container-->
-        </div>
+   
         <!--end::Content-->
     </div>
 </x-app-layout>
