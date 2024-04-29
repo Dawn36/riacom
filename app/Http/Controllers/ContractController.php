@@ -131,7 +131,7 @@ class ContractController extends Controller
             'duration' => $request->duration,
             'end_date' => Date("Y-m-d",strtotime($request->end_date)),
             'renews_in' => $request->renews_in,
-            'renews_in_date' => date("Y-m-d", strtotime($request->end_date . ' +' . $request->renews_in . ' months')),
+            'renews_in_date' => date("Y-m-d", strtotime($request->start_date . ' +' . $request->renews_in . ' months')),
             'type_of_service' => $request->type_of_service,
             'monthly_fee' => $request->monthly_fee,
             'provider_id'=>$request->provider,
@@ -239,7 +239,7 @@ class ContractController extends Controller
         $contract->duration  =  $request->duration;
         $contract->end_date  =  Date("Y-m-d",strtotime($request->end_date));
         $contract->renews_in  =  $request->renews_in;
-        $contract->renews_in_date  =  date("Y-m-d", strtotime($request->end_date . ' +' . $request->renews_in . ' months'));
+        $contract->renews_in_date  =  date("Y-m-d", strtotime($request->start_date . ' +' . $request->renews_in . ' months'));
         $contract->type_of_service  =  $request->type_of_service;
         $contract->monthly_fee  =  $request->monthly_fee;
         $contract->provider_id = $request->provider;

@@ -133,35 +133,35 @@
                                                         {{ __('client.Update Status') }}</div>
                                                 </div>
                                                 <div class="menu-item px-3">
-                                                    <a class="menu-link px-3"
-                                                        onclick="clientStatusUpdate('To be Contacted','{{ $item->id }}',this)">{{ __('client.To be Contacted') }}</a>
+                                                    <a class="menu-link px-3 {{ __('client.'.ucwords($item->status)) == __('client.To Be Contacted') ? 'active' : '' }}" 
+                                                        onclick="clientStatusUpdate('To be Contacted','{{ $item->id }}',this)">{{ __('client.To Be Contacted') }}</a>
                                                 </div>
                                                 <div class="menu-item px-3">
-                                                    <a class="menu-link px-3"
+                                                    <a class="menu-link px-3 {{ __('client.'.ucwords($item->status)) == __('client.Contact') ? 'active' : '' }}"
                                                         onclick="clientStatusUpdate('Contact','{{ $item->id }}',this)">{{ __('client.Contact') }}</a>
                                                 </div>
                                                 <div class="menu-item px-3">
-                                                    <a class="menu-link px-3"
+                                                    <a class="menu-link px-3 {{ __('client.'.ucwords($item->status)) == __('client.Under Negotiation') ? 'active' : '' }}"
                                                         onclick="clientStatusUpdate('Under Negotiation','{{ $item->id }}',this)">{{ __('client.Under Negotiation') }}</a>
                                                 </div>
                                                 <div class="menu-item px-3">
-                                                    <a class="menu-link active px-3"
+                                                    <a class="menu-link {{ __('client.'.ucwords($item->status)) == __('client.Active') ? 'active' : '' }} px-3"
                                                         onclick="clientStatusUpdate('Active','{{ $item->id }}',this)">{{ __('client.Active') }}</a>
                                                 </div>
                                                 <div class="menu-item px-3">
-                                                    <a class="menu-link px-3"
+                                                    <a class="menu-link px-3 {{ __('client.'.ucwords($item->status)) == __('client.Inactive') ? 'active' : '' }}"
                                                         onclick="clientStatusUpdate('Inactive','{{ $item->id }}',this)">{{ __('client.Inactive') }}</a>
                                                 </div>
                                                 <div class="menu-item px-3">
-                                                    <a class="menu-link px-3"
+                                                    <a class="menu-link px-3 {{ __('client.'.ucwords($item->status)) == __('client.Pending') ? 'active' : '' }}"
                                                         onclick="clientStatusUpdate('Pending','{{ $item->id }}',this)">{{ __('client.Pending') }}</a>
                                                 </div>
                                                 <div class="menu-item px-3">
-                                                    <a class="menu-link px-3"
+                                                    <a class="menu-link px-3 {{ __('client.'.ucwords($item->status)) == __('client.Not Interested') ? 'active' : '' }}"
                                                         onclick="clientStatusUpdate('Not Interested','{{ $item->id }}',this)">{{ __('client.Not Interested') }}</a>
                                                 </div>
                                                 <div class="menu-item px-3">
-                                                    <a class="menu-link px-3"
+                                                    <a class="menu-link px-3 {{ __('client.'.ucwords($item->status)) == __('client.Rejected') ? 'active' : '' }}"
                                                         onclick="clientStatusUpdate('Rejected','{{ $item->id }}',this)">{{ __('client.Rejected') }}</a>
                                                 </div>
                                             </div>

@@ -23,16 +23,16 @@
             </div>
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">{{ __('lead.Status') }}</label>
-                <select name="status" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="{{ __('lead.Select Status') }}" data-allow-clear="true" required>
-                    <option></option>
+                <select name="status" class="form-select form-select-solid" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="{{ __('lead.Select Status') }}" data-allow-clear="true" required>
+                    <option>{{ __('lead.Select Status') }}</option>
                     <option value="lead">{{ __('lead.Lead') }}</option>
                     <option value="client">{{ __('lead.Client') }}</option>
                 </select>
             </div>
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">{{ __('lead.District') }}</label>
-                <select name="district" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="{{ __('lead.Select District') }}" data-allow-clear="true" required>
-                    <option></option>
+                <select name="district" class="form-select form-select-solid " data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="{{ __('lead.Select District') }}" data-allow-clear="true" required>
+                    <option>{{ __('lead.Select District') }}</option>
                     <option value="Aveiro">{{ __('lead.Aveiro') }}</option>
                     <option value="Beja">{{ __('lead.Beja') }}</option>
                     <option value="Braga">{{ __('lead.Braga') }}</option>
@@ -58,8 +58,8 @@
             @if(Auth::user()->hasRole('admin'))
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">{{ __('lead.User') }}</label>
-                <select name="user" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="{{ __('lead.Select User') }}" data-allow-clear="true" required>
-                    <option></option>
+                <select name="user" class="form-select form-select-solid" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="{{ __('lead.Select User') }}" data-allow-clear="true" required>
+                    <option>{{ __('lead.Select User') }}</option>
                     @foreach ($user as $item)
                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                     @endforeach
@@ -82,5 +82,4 @@
 <script>
     KTScroll.createInstances()
 
-    $('.js-example-basic-single').select2();
 </script>

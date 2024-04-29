@@ -35,10 +35,10 @@
             </div>
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">{{ __('contract.Provider') }}</label>
-                <select name="provider" id="provider" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
+                <select name="provider" id="provider" class="form-select form-select-solid" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Provider') }}"
                     {{ Auth::user()->hasRole('admin') == true ? 'onchange=providerUser()' : ''  }} data-allow-clear="true" required>
-                    <option></option>
+                    <option>{{ __('contract.Select Provider') }}</option>
                     @foreach ($provider as $item)
                         <option value="{{ $item->id }}" {{ $contract->provider_id == $item->id ? 'selected' : '' }}
                             data-type="{{ $item->type_of_service }}">{{ $item->name }}
@@ -58,19 +58,19 @@
                     <i class="ki-outline ki-information-5 ms-1 fs-6" data-bs-toggle="tooltip"
                         title="{{ __('contract.Select the Provider to see the Type of Service') }}"></i>
                 </label>
-                <select id="type_of_service" name="type_of_service" class="form-select form-select-solid js-example-basic-single"
+                <select id="type_of_service" name="type_of_service" class="form-select form-select-solid"
                     data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true"
                     data-placeholder="{{ __('contract.Select Type of Service') }}" data-allow-clear="true">
-                    <option></option>
+                    <option>{{ __('contract.Select Type of Service') }}</option>
                 </select>
                 
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">{{ __('contract.Tension') }}</label>
-                <select name="tension" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
+                <select name="tension" class="form-select form-select-solid" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Tension') }}"
                     data-allow-clear="true">
-                    <option></option>
+                    <option>{{ __('contract.Select Tension') }}</option>
                     <option value="BTN" {{ $contract->tension == 'BTN' ? 'selected' : '' }}>{{ __('contract.BTN') }}</option>
                     <option value="BTE" {{ $contract->tension == 'BTE' ? 'selected' : '' }}>{{ __('contract.BTE') }}</option>
                     <option value="MT" {{ $contract->tension == 'MT' ? 'selected' : '' }}>{{ __('contract.MT') }}</option>
@@ -80,10 +80,10 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">{{ __('contract.Power') }}</label>
-                <select name="power" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
+                <select name="power" class="form-select form-select-solid" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Power') }}"
                     data-allow-clear="true">
-                    <option></option>
+                    <option>{{ __('contract.Select Power') }}</option>
                     <option value="1,15" {{ $contract->power == '1,15' ? 'selected' : '' }}>{{ __('contract.1,15') }}</option>
                     <option value="2,30" {{ $contract->power == '2,30' ? 'selected' : '' }}>{{ __('contract.2,30') }}</option>
                     <option value="3,45" {{ $contract->power == '3,45' ? 'selected' : '' }}>{{ __('contract.3,45') }}</option>
@@ -101,10 +101,10 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">{{ __('contract.Cicle') }}</label>
-                <select name="cicle" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
+                <select name="cicle" class="form-select form-select-solid " data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Cicle') }}"
                     data-allow-clear="true">
-                    <option></option>
+                    <option>{{ __('contract.Select Cicle') }}</option>
                     <option value="No cicle" {{ $contract->cicle == 'No cicle' ? 'selected' : '' }}>{{ __('contract.No cicle') }}</option>
                     <option value="Daily" {{ $contract->cicle == 'Daily' ? 'selected' : '' }}>{{ __('contract.Daily') }}</option>
                     <option value="Weekly" {{ $contract->cicle == 'Weekly' ? 'selected' : '' }}>{{ __('contract.Weekly') }}</option>
@@ -113,10 +113,10 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">{{ __('contract.Tariff') }}</label>
-                <select name="tariff" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
+                <select name="tariff" class="form-select form-select-solid" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Tariff') }}"
                     data-allow-clear="true">
-                    <option></option>
+                    <option>{{ __('contract.Select Tariff') }}</option>
                     <option value="Simple" {{ $contract->tariff == 'Simple' ? 'selected' : '' }}>{{ __('contract.Simple') }}</option>
                     <option value="Bi-hourly" {{ $contract->tariff == 'Bi-hourly' ? 'selected' : '' }}>{{ __('contract.Bi-hourly') }}
                     </option>
@@ -128,10 +128,10 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">{{ __('contract.Reception phase') }}</label>
-                <select name="reception_phase" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
+                <select name="reception_phase" class="form-select form-select-solid" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Reception phase') }}"
                     data-allow-clear="true">
-                    <option></option>
+                    <option>{{ __('contract.Select Reception phase') }}</option>
                     <option value="Monofasic" {{ $contract->reception_phase == 'Monofasic' ? 'selected' : '' }}>
                         {{ __('contract.Monofasic') }}</option>
                     <option value="Trifasic" {{ $contract->reception_phase == 'Trifasic' ? 'selected' : '' }}>{{ __('contract.Trifasic') }}
@@ -140,10 +140,10 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">{{ __('contract.Gas pressure') }}</label>
-                <select name="gas_pressure" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
+                <select name="gas_pressure" class="form-select form-select-solid" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Gas pressure') }}"
                     data-allow-clear="true">
-                    <option></option>
+                    <option>{{ __('contract.Select Gas pressure') }}</option>
                     <option value="Low pressure" {{ $contract->gas_pressure == 'Low pressure' ? 'selected' : '' }}>{{ __('contract.Low pressure') }}</option>
                     <option value="Mid pressure" {{ $contract->gas_pressure == 'Mid pressure' ? 'selected' : '' }}>{{ __('contract.Mid pressure') }}</option>
                     <option value="High pressure" {{ $contract->gas_pressure == 'High pressure' ? 'selected' : '' }}>
@@ -152,10 +152,10 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">{{ __('contract.Gas Scalation') }}</label>
-                <select name="gas_scalation" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
+                <select name="gas_scalation" class="form-select form-select-solid" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Gas Scalation') }}"
                     data-allow-clear="true">
-                    <option></option>
+                    <option>{{ __('contract.Select Gas Scalation') }}</option>
                     <option value="1" {{ $contract->gas_scalation == '1' ? 'selected' : '' }}>{{ __('contract.1') }}</option>
                     <option value="2" {{ $contract->gas_scalation == '2' ? 'selected' : '' }}>{{ __('contract.2') }}</option>
                     <option value="3" {{ $contract->gas_scalation == '3' ? 'selected' : '' }}>{{ __('contract.3') }}</option>
@@ -181,10 +181,10 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">{{ __('contract.Energy Market') }}</label>
-                <select name="energy_market" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
+                <select name="energy_market" class="form-select form-select-solid" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Energy Market') }}"
                     data-allow-clear="true">
-                    <option></option>
+                    <option>{{ __('contract.Select Energy Market') }}</option>
                     <option value="Indexed Market"
                         {{ $contract->energy_market == 'Indexed Market' ? 'selected' : '' }}>{{ __('contract.Indexed Market') }}</option>
                     <option value="Fixed Market" {{ $contract->energy_market == 'Fixed Market' ? 'selected' : '' }}>
@@ -195,10 +195,10 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <label class="fs-6 fw-bold mb-2">{{ __('contract.Gas Market') }}</label>
-                <select name="gas_market" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
+                <select name="gas_market" class="form-select form-select-solid" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Gas Market') }}"
                     data-allow-clear="true">
-                    <option></option>
+                    <option>{{ __('contract.Select Gas Market') }}</option>
                     <option value="Indexed Market" {{ $contract->gas_market == 'Indexed Market' ? 'selected' : '' }}>
                         {{ __('contract.Indexed Market') }}</option>
                     <option value="Fixed Market" {{ $contract->gas_market == 'Fixed Market' ? 'selected' : '' }}>{{ __('contract.Fixed Market') }}</option>
@@ -208,10 +208,10 @@
 
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">{{ __('contract.Status') }}</label>
-                <select name="status" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
+                <select name="status" class="form-select form-select-solid" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select Status') }}"
                     data-allow-clear="true" required>
-                    <option></option>
+                    <option>{{ __('contract.Select Status') }}</option>
                     <option value="Active" {{ $contract->status == 'Active' ? 'selected' : '' }}>{{ __('contract.Active') }}</option>
                     <option value="Closed" {{ $contract->status == 'Closed' ? 'selected' : '' }}>{{ __('contract.Closed') }}</option>
                 </select>
@@ -224,10 +224,10 @@
             @if(Auth::user()->hasRole('admin'))
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">{{ __('contract.User') }}</label>
-                <select name="user" id="user" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large"
+                <select name="user" id="user" class="form-select form-select-solid" data-dropdown-parent="#modal_large"
                     data-control="select2" data-close-on-select="true" data-placeholder="{{ __('contract.Select User') }}"
                     data-allow-clear="true" required>
-                    <option></option>
+                    <option>{{ __('contract.Select User') }}</option>
 
                 </select>
             </div>
@@ -327,5 +327,4 @@
     KTScroll.createInstances();
     var input1 = document.querySelector(".kt_tagify_1");
     new Tagify(input1, {});
-    $('.js-example-basic-single').select2();
 </script>

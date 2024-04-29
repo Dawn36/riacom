@@ -71,7 +71,7 @@
                         <span class="menu-title">{{ __('layout.Providers') }}</span>
                     </a>
                 </div>
-                <div class="menu-item">
+                {{-- <div class="menu-item">
                     <a class="menu-link {{ Route::currentRouteName() == 'event.index'  ? 'active' : '' }}" href="{{route('event.index')}}">
                         <span class="menu-icon">
                             <span class="svg-icon svg-icon-2">
@@ -84,7 +84,7 @@
                         </span>
                         <span class="menu-title">{{ __('layout.Event') }}</span>
                     </a>
-                </div>
+                </div> --}}
                 @if(Auth::user()->hasRole('admin'))
                 <div class="menu-item">
                     <a class="menu-link {{ Route::currentRouteName() == 'user.index'  ? 'active' : '' }}" href="{{route('user.index')}}">

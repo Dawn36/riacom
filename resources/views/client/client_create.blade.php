@@ -53,8 +53,8 @@
             </div>
             <div class="col-12 col-md-6">
                 <label class="required fs-6 fw-bold mb-2">{{ __('client.Status') }}</label>
-                <select name="status" class="form-select form-select-solid js-example-basic-single" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="{{ __('client.Select Status') }}" data-allow-clear="true" >
-                    <option></option>
+                <select name="status" class="form-select form-select-solid" data-dropdown-parent="#modal_large" data-control="select2" data-close-on-select="true" data-placeholder="{{ __('client.Select Status') }}" data-allow-clear="true" >
+                    <option>{{ __('client.Select Status') }}</option>
                     <option value="to be contacted">{{ __('client.To be Contacted') }}</option>
                     <option value="contact">{{ __('client.Contact') }}</option>
                     <option value="under negotiation">{{ __('client.Under Negotiation') }}</option>
