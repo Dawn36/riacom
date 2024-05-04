@@ -57,6 +57,10 @@ class ContractController extends Controller
             return $query->where('contracts.start_date', '>=', $startDate);
         })->when($request->end_date, function ($query, $endDate) {
             return $query->where('contracts.end_date', '<=', $endDate);
+        })->when($request->renews_in, function ($query, $renewsIn) {
+            $targetMonth = date('m',strtotime($renewsIn));
+            $targetYear = date('Y',strtotime($renewsIn));
+            return $query->whereRaw("MONTH(renews_in_date) = ? AND YEAR(renews_in_date) = ?", [$targetMonth, $targetYear]);
         })->select(['contracts.*','u.name as u_name','c.vat_number','c.phone','c.email','p.name as p_name','c.id as c_id','c.name as c_name','c.image as c_image'])->get();
         
         $provider=Provider::UserWise()->get();

@@ -26,6 +26,7 @@ return [
     'Power' => 'Potência',
     'Select Power' => 'Selecionar Potência',
     'Select Provider' => 'Selecionar Operador/Comercializador',
+    'Enter Renews in' => 'Digite Renova em',
     '1,15' => '1,15',
     '2,30' => '2,30',
     '3,45' => '3,45',

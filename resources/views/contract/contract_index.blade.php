@@ -67,6 +67,12 @@
                                                             placeholder="{{ __('contract.Enter End Date') }}" name="end_date" />
                                                     </div>
                                                     <div class="col-6">
+                                                        <label class="fs-6 fw-bold mb-2">{{ __('contract.Renews in') }}</label>
+                                                        <input class="form-control form-control-solid month_year" type="month"
+                                                            value="{{ request()->renews_in }}"
+                                                            placeholder="{{ __('contract.Enter Renews in') }}" name="renews_in" />
+                                                    </div>
+                                                    <div class="col-6">
                                                         <label class="fs-6 fw-bold mb-2">{{ __('contract.Provider') }}</label>
                                                         <select id="provider_id" name="provider_id" class="form-select form-select-solid"
                                                             data-control="select2" data-close-on-select="true"
@@ -218,6 +224,7 @@
                                                             <option value="Mixed Market" {{ request()->gas_market == 'Mixed Market' ? 'selected' : '' }} >{{ __('contract.Mixed Market') }}</option>
                                                         </select>
                                                     </div>
+                                                    
                                                     @if(Auth::user()->hasRole('admin'))
                                                     <div class="col-6">
                                                         <label class="fs-6 fw-bold mb-2">{{ __('contract.User') }}</label>
