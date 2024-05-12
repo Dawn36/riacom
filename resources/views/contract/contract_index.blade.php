@@ -68,7 +68,7 @@
                                                     </div>
                                                     <div class="col-6">
                                                         <label class="fs-6 fw-bold mb-2">{{ __('contract.Renews in') }}</label>
-                                                        <input class="form-control form-control-solid month_year" type="month"
+                                                        <input class="form-control form-control-solid month_year"
                                                             value="{{ request()->renews_in }}"
                                                             placeholder="{{ __('contract.Enter Renews in') }}" name="renews_in" />
                                                     </div>

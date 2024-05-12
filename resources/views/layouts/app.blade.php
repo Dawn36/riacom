@@ -266,19 +266,13 @@ $path = $_SERVER['REQUEST_URI'];
             // -- Date Picker
             $(".kt_datepicker_2").flatpickr();
 
-            // $(".month_year").flatpickr({
-            //     dateFormat: "Y-m", // Show year and month format (e.g., 2024-05)
-            //     mode: "single", // Set the picker to a single mode
-            //     enable: [
-            //         {
-            //             from: "today", // Enable dates starting from today
-            //             to: new Date().fp_incr(12) // Enable dates for the next 12 months
-            //         }
-            //     ],
-            //     onChange: function(selectedDates, dateStr, instance) {
-            //         console.log(dateStr); // Log the selected date
-            //     }
-            // });
+             $(".month_year").flatpickr({
+                 dateFormat: "Y-m", // Show year and month format (e.g., 2024-05)
+                 mode: "single", // Set the picker to a single mode
+                 onChange: function(selectedDates, dateStr, instance) {
+                     console.log(dateStr); // Log the selected date
+                 }
+             });
 
             // -- Date & Time Picker
             $(".kt_datepicker_3").flatpickr({
